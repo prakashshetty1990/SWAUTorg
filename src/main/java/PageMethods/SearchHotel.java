@@ -80,6 +80,16 @@ public class SearchHotel extends Page {
 		clickOn(btnSearch,"Search");
 	return new SelectHotel(browser);
 	}
+
+	public void verifyLoginpage() {
+		if (isElementPresent(By.xpath("//input[@name='Reset']"))) {
+			Common.testStepPassed("Successfully logged in to the application" );	
+		}else{
+			Common.testStepFailed("Unable to login to application, Check Username and password" );
+		}
+				
+		
+	}
 	
 	
 	

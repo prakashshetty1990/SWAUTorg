@@ -57,7 +57,7 @@ public class TestCases extends Common {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfo("########### Start of Test Case Data Set: "+testDataSet + " ###########");
 			searchHotel = adactinHomePage.Login();			
-			
+			searchHotel.verifyLoginpage();
 			testStepInfo("########### End of Test Case Data Set: "+testDataSet + " ###########");
 			}
 		testEnd();
