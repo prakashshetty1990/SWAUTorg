@@ -57,7 +57,7 @@ public class SearchHotel extends Page {
 @Override
 	protected void waitForPageLoad() {
 		try{
-			new WebDriverWait(browser,60).
+			new WebDriverWait(browser,5).
 			until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='Reset']")));				
 		}catch(Exception e){
 			System.out.println(e.getMessage());
