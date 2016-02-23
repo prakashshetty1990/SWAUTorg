@@ -1,0 +1,77 @@
+ INFO | 2016-02-08 14:35:08,882 | Common.java | 68 | Startup activites...
+ INFO | 2016-02-08 14:35:08,885 | Common.java | 68 | Test Output Directory creation successful :C:\POCWorkspace\SWAUTorg\TestResults\2016_02_08_02_35_08_PM
+ INFO | 2016-02-08 14:35:08,886 | Common.java | 68 | Log File creation successful : LogFile.log
+ INFO | 2016-02-08 14:35:09,052 | Common.java | 68 | Getting value of Tc_Settings_Excelpath from Test Configuration file : ./src/test/resources/TestCaseSettings.xls
+ INFO | 2016-02-08 14:35:09,120 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-08 14:35:09,184 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-08 14:35:09,184 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-08 14:35:09,185 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-08 14:35:09,185 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-08 14:35:09,185 | Common.java | 68 | Element time out set
+ INFO | 2016-02-08 14:35:09,185 | Common.java | 68 | ##### Start of Test Case : Login to Adactin Application #####
+ WARN | 2016-02-08 14:35:09,186 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>Login to Adactin Application</h1></font><br/>
+ INFO | 2016-02-08 14:35:09,186 | Common.java | 68 | Test Case Name: TC_001
+ INFO | 2016-02-08 14:35:09,186 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-08 14:35:09,218 | Common.java | 68 | Test Data Set Name: TC_001
+ INFO | 2016-02-08 14:35:09,218 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-08 14:35:09,220 | Common.java | 68 | Test Data Set Name: TC_001_01
+ INFO | 2016-02-08 14:35:09,220 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-08 14:35:09,220 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-08 14:35:09,220 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-08 14:35:09,223 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
+ INFO | 2016-02-08 14:35:13,494 | Common.java | 68 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-02-08 14:35:14,253 | Common.java | 68 | Opened Application Successfully
+ERROR | 2016-02-08 14:35:14,253 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:14,337 | Common.java | 68 | ########### Start of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-08 14:35:14,337 | Common.java | 68 | Report step generation success : ########### Start of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-08 14:35:14,431 | Common.java | 68 | Entered value in the text field->NandiniG
+ERROR | 2016-02-08 14:35:14,431 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:14,506 | Common.java | 68 | Entered value in the text field->11G404
+ERROR | 2016-02-08 14:35:14,506 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:15,178 | Common.java | 68 | Clicked on WebElement-Login
+ERROR | 2016-02-08 14:35:15,178 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:15,207 | Common.java | 68 | ########### End of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-08 14:35:15,208 | Common.java | 68 | Report step generation success : ########### End of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-08 14:35:16,467 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-08 14:35:16,467 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-08 14:35:16,468 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-08 14:35:16,468 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-08 14:35:16,469 | Common.java | 68 | Element time out set
+ INFO | 2016-02-08 14:35:16,469 | Common.java | 68 | ##### Start of Test Case : Search a hotel #####
+ WARN | 2016-02-08 14:35:16,469 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>Search a hotel</h1></font><br/>
+ INFO | 2016-02-08 14:35:16,469 | Common.java | 68 | Test Case Name: TC_002
+ INFO | 2016-02-08 14:35:16,470 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-08 14:35:16,547 | Common.java | 68 | Test Data Set Name: TC_002
+ INFO | 2016-02-08 14:35:16,548 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-08 14:35:16,548 | Common.java | 68 | Test Data Set Name: TC_002_01
+ INFO | 2016-02-08 14:35:16,548 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-08 14:35:16,548 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-08 14:35:16,548 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-08 14:35:16,549 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
+ INFO | 2016-02-08 14:35:20,998 | Common.java | 68 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-02-08 14:35:21,946 | Common.java | 68 | Opened Application Successfully
+ERROR | 2016-02-08 14:35:21,946 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:22,023 | Common.java | 68 | ########### Start of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-08 14:35:22,023 | Common.java | 68 | Report step generation success : ########### Start of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-08 14:35:22,105 | Common.java | 68 | Entered value in the text field->NandiniG
+ERROR | 2016-02-08 14:35:22,105 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:22,213 | Common.java | 68 | Entered value in the text field->11G404
+ERROR | 2016-02-08 14:35:22,214 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:22,943 | Common.java | 68 | Clicked on WebElement-Login
+ERROR | 2016-02-08 14:35:22,943 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,069 | Common.java | 68 | selected value -Sydney from dropdown->Location
+ERROR | 2016-02-08 14:35:23,070 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,163 | Common.java | 68 | selected value -Hotel Sunshine from dropdown->Hotel
+ERROR | 2016-02-08 14:35:23,164 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,256 | Common.java | 68 | selected value -Deluxe from dropdown->RoomType
+ERROR | 2016-02-08 14:35:23,257 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,354 | Common.java | 68 | selected value -2 - Two from dropdown->NumRooms
+ERROR | 2016-02-08 14:35:23,355 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,429 | Common.java | 68 | Entered value in the text field->08/02/2016
+ERROR | 2016-02-08 14:35:23,429 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,507 | Common.java | 68 | Entered value in the text field->13/02/2016
+ERROR | 2016-02-08 14:35:23,507 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,606 | Common.java | 68 | selected value -4 - Four from dropdown->Adults
+ERROR | 2016-02-08 14:35:23,606 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-08 14:35:23,698 | Common.java | 68 | selected value -4 - Four from dropdown->Children
+ERROR | 2016-02-08 14:35:23,699 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.

@@ -1,0 +1,393 @@
+ INFO | 2016-02-23 14:54:21,143 | Common.java | 68 | Startup activites...
+ INFO | 2016-02-23 14:54:21,153 | Common.java | 68 | Test Output Directory creation successful :D:\Prakashs_Backup\NewWorkspace\SWAUTorg\TestResults\2016_02_23_02_54_21_PM
+ INFO | 2016-02-23 14:54:21,153 | Common.java | 68 | Log File creation successful : LogFile.log
+ INFO | 2016-02-23 14:54:21,533 | Common.java | 68 | Getting value of Tc_Settings_Excelpath from Test Configuration file : ./src/test/resources/TestCaseSettings.xls
+ INFO | 2016-02-23 14:54:21,663 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-23 14:54:21,803 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Element time out set
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | ##### Start of Test Case : Login to Adactin Application #####
+ WARN | 2016-02-23 14:54:21,813 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>Login to Adactin Application</h1></font><br/>
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Test Case Name: TC_001
+ INFO | 2016-02-23 14:54:21,813 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Test Data Set Name: TC_001
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Test Data Set Name: TC_001_01
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-23 14:54:21,873 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-23 14:54:21,883 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
+ INFO | 2016-02-23 14:54:29,302 | Common.java | 68 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-02-23 14:54:30,710 | Common.java | 68 | Opened Application Successfully
+ERROR | 2016-02-23 14:54:30,710 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:54:30,840 | Common.java | 68 | ########### Start of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-23 14:54:30,840 | Common.java | 68 | Report step generation success : ########### Start of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-23 14:54:30,960 | Common.java | 68 | Entered value in the text field->NandiniG
+ERROR | 2016-02-23 14:54:30,960 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:54:31,087 | Common.java | 68 | Entered value in the text field->11G404
+ERROR | 2016-02-23 14:54:31,087 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:54:31,467 | Common.java | 68 | Clicked on WebElement-Login
+ERROR | 2016-02-23 14:54:31,477 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:55:31,749 | Common.java | 68 | ########### End of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-23 14:55:31,749 | Common.java | 68 | Report step generation success : ########### End of Test Case Data Set: TC_001_01 ###########
+ INFO | 2016-02-23 14:55:33,589 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:55:33,589 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | Element time out set
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | ##### Start of Test Case : Search a hotel #####
+ WARN | 2016-02-23 14:55:33,599 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>Search a hotel</h1></font><br/>
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | Test Case Name: TC_002
+ INFO | 2016-02-23 14:55:33,599 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Test Data Set Name: TC_002
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Test Data Set Name: TC_002_01
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-23 14:55:33,719 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
+ INFO | 2016-02-23 14:55:37,357 | Common.java | 68 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-02-23 14:55:38,217 | Common.java | 68 | Opened Application Successfully
+ERROR | 2016-02-23 14:55:38,217 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:55:38,270 | Common.java | 68 | ########### Start of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-23 14:55:38,270 | Common.java | 68 | Report step generation success : ########### Start of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-23 14:55:38,382 | Common.java | 68 | Entered value in the text field->NandiniG
+ERROR | 2016-02-23 14:55:38,382 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:55:38,502 | Common.java | 68 | Entered value in the text field->11G404
+ERROR | 2016-02-23 14:55:38,502 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:55:39,092 | Common.java | 68 | Clicked on WebElement-Login
+ERROR | 2016-02-23 14:55:39,092 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ERROR | 2016-02-23 14:56:39,634 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='location']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='location']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:56:39,634 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='location']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='location']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:56:40,044 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:56:40,044 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,044 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,044 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,044 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 14:56:40,054 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='hotels']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='hotels']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:56:40,054 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='hotels']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='hotels']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:56:40,446 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:56:40,446 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,446 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,446 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,446 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 14:56:40,456 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_type']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_type']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:56:40,456 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_type']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_type']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:56:40,836 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:56:40,836 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,836 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,836 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:40,836 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 14:56:40,836 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_nos']"}
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_nos']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:56:40,846 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_nos']"}
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_nos']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:56:41,236 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:56:41,236 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:41,236 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:41,236 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:56:41,236 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 14:57:41,704 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='adult_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='adult_room']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:57:41,704 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='adult_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='adult_room']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:57:42,074 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:57:42,074 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,074 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,074 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,074 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 14:57:42,084 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='child_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='child_room']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 14:57:42,084 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='child_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='child_room']}
+Session ID: e606750d-6ba5-4f60-8d64-bd55c3b21f3f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 14:57:42,459 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 14:57:42,459 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,459 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,459 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:57:42,459 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 14:59:12,844 | Common.java | 68 | ########### End of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-23 14:59:12,844 | Common.java | 68 | Report step generation success : ########### End of Test Case Data Set: TC_002_01 ###########
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | Element time out set
+ INFO | 2016-02-23 14:59:13,961 | Common.java | 68 | ##### Start of Test Case : Book a hotel #####
+ WARN | 2016-02-23 14:59:13,961 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>Book a hotel</h1></font><br/>
+ INFO | 2016-02-23 14:59:13,971 | Common.java | 68 | Test Case Name: TC_003
+ INFO | 2016-02-23 14:59:13,971 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Test Data Set Name: TC_003
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Test Data Set Name: TC_003_01
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-23 14:59:14,133 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
+ INFO | 2016-02-23 14:59:18,552 | Common.java | 68 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-02-23 14:59:19,331 | Common.java | 68 | Opened Application Successfully
+ERROR | 2016-02-23 14:59:19,331 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:59:19,391 | Common.java | 68 | ########### Start of Test Case Data Set: TC_003_01 ###########
+ INFO | 2016-02-23 14:59:19,391 | Common.java | 68 | Report step generation success : ########### Start of Test Case Data Set: TC_003_01 ###########
+ INFO | 2016-02-23 14:59:19,491 | Common.java | 68 | Entered value in the text field->NandiniG
+ERROR | 2016-02-23 14:59:19,491 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:59:19,621 | Common.java | 68 | Entered value in the text field->11G404
+ERROR | 2016-02-23 14:59:19,621 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ INFO | 2016-02-23 14:59:20,001 | Common.java | 68 | Clicked on WebElement-Login
+ERROR | 2016-02-23 14:59:20,001 | Common.java | 83 | Invalid log Type :PASS. Unable to log the message.
+ERROR | 2016-02-23 15:00:20,435 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='location']"}
+Command duration or timeout: 20 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='location']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:00:20,435 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='location']"}
+Command duration or timeout: 20 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='location']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:00:20,805 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:00:20,805 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:20,805 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:20,805 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:20,805 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:00:20,815 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='hotels']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='hotels']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:00:20,815 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='hotels']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='hotels']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:00:21,185 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:00:21,185 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,185 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,185 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,185 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:00:21,195 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_type']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_type']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:00:21,195 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_type']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_type']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:00:21,577 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:00:21,577 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,577 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,577 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,577 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:00:21,587 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_nos']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_nos']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:00:21,587 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='room_nos']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='room_nos']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:00:21,967 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:00:21,967 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,967 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,967 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:00:21,967 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:01:22,539 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='adult_room']"}
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='adult_room']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:01:22,539 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='adult_room']"}
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='adult_room']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:01:22,919 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:01:22,919 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:22,919 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:22,919 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:22,919 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:01:22,929 | Common.java | 76 | Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='child_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='child_room']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ERROR | 2016-02-23 15:01:22,929 | Common.java | 76 | Report step generation success : Unable to select value from the dropdown Unable to locate element: {"method":"xpath","selector":"//*[@id='child_room']"}
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//*[@id='child_room']}
+Session ID: 2a465d1a-a452-41b6-9efa-79fccb06dada
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=44.0.2}]
+ INFO | 2016-02-23 15:01:23,299 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:01:23,299 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:23,299 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:23,299 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:01:23,299 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ERROR | 2016-02-23 15:03:44,905 | Common.java | 76 | Uanble to click on Element-Continue
+ERROR | 2016-02-23 15:03:44,905 | Common.java | 76 | Report step generation success : Uanble to click on Element-Continue
+ERROR | 2016-02-23 15:03:45,915 | Common.java | 76 | Report step generation success : org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'STI-D01-PRAKAS', ip: '192.168.90.199', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+Driver info: driver.version: FirefoxDriver
+ INFO | 2016-02-23 15:03:45,915 | Common.java | 68 | Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2016-02-23 15:03:45,915 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:03:45,915 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:03:45,915 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:03:45,925 | Common.java | 68 | Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Element time out set
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | ##### Start of Test Case : New User Register functionality #####
+ WARN | 2016-02-23 15:03:47,969 | Common.java | 72 | Report step generation success : <B></B><h1><font color=SaddleBrown>New User Register functionality</h1></font><br/>
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Test Case Name: TC_005
+ INFO | 2016-02-23 15:03:47,969 | Common.java | 68 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Test Data Set Name: TC_005
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Execution Flag: Execute
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Test Data Set Name: TC_005_01
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Execution Flag: YES
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Test Data Set Name: 
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Execution Flag: 
+ INFO | 2016-02-23 15:03:48,069 | Common.java | 68 | Getting value of Browser from Test Configuration file : Firefox
