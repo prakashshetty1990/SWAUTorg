@@ -41,7 +41,7 @@ public class SelectHotel  extends Page{
 		}
 	}
 
-	public ConfirmationPage Selecthotel()
+	public void Selecthotel()
 	{
 		
 				
@@ -50,8 +50,7 @@ public class SelectHotel  extends Page{
 		
 	//	System.out.println(Common.retrieve("rbSelect")+ "radio");
 		//selectByVisisbleValue(rbSelect,"Select",Common.retrieve("rbSelect"));
-		clickOn(btnContinue,"Continue");
-		return new ConfirmationPage(browser);
+		clickOn(btnContinue,"Continue");		
 	}
 	
 	

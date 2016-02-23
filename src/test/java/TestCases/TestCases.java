@@ -94,7 +94,7 @@ public class TestCases extends Common {
 			testStepInfo("########### Start of Test Case Data Set: "+testDataSet + " ###########");
 			searchHotel = adactinHomePage.Login();			
 			selectHotel=searchHotel.BookHotel();
-			confirmpage=selectHotel.Selecthotel();
+			selectHotel.Selecthotel();
 			
 		//	illinoisLifeInsurePage.getMyQuote();
 		//	illinoisLifeInsurePage.verifyPathProtectorreturnOfPremiumTerms();
