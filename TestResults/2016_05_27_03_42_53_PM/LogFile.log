@@ -1,0 +1,82 @@
+ INFO | 2016-05-27 15:42:53,445 | Common.java | 64 | Startup activites...
+ INFO | 2016-05-27 15:42:53,448 | Common.java | 64 | Test Output Directory creation successful :D:\Prakashs_Backup\DemoWorkspaceFinal\SWAUTorg\TestResults\2016_05_27_03_42_53_PM
+ INFO | 2016-05-27 15:42:53,448 | Common.java | 64 | Log File creation successful : LogFile.log
+ INFO | 2016-05-27 15:42:53,742 | Common.java | 64 | Getting value of Tc_Settings_Excelpath from Test Configuration file : ./src/test/resources/TestCaseSettings.xls
+ INFO | 2016-05-27 15:42:53,856 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-05-27 15:42:54,035 | Common.java | 64 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:42:54,036 | Common.java | 64 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-05-27 15:42:54,036 | Common.java | 64 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-05-27 15:42:54,036 | Common.java | 64 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:42:54,037 | Common.java | 64 | Element time out set
+ INFO | 2016-05-27 15:42:54,037 | Common.java | 64 | ##### Start of Test Case : Login to Adactin Application #####
+ INFO | 2016-05-27 15:42:54,037 | Common.java | 64 | Test Case Name: TC_001
+ INFO | 2016-05-27 15:42:54,037 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-05-27 15:42:54,091 | Common.java | 64 | Test Data Set Name: TC_001
+ INFO | 2016-05-27 15:42:54,091 | Common.java | 64 | Execution Flag: Execute
+ INFO | 2016-05-27 15:42:54,091 | Common.java | 64 | Test Data Set Name: TC_001_01
+ INFO | 2016-05-27 15:42:54,092 | Common.java | 64 | Execution Flag: YES
+ INFO | 2016-05-27 15:42:54,092 | Common.java | 64 | Test Data Set Name: 
+ INFO | 2016-05-27 15:42:54,093 | Common.java | 64 | Execution Flag: 
+ INFO | 2016-05-27 15:42:54,097 | Common.java | 64 | Getting value of Browser from Test Configuration file : chrome
+ INFO | 2016-05-27 15:42:56,114 | Common.java | 64 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-05-27 15:42:59,740 | Common.java | 64 | Opened Application Successfully
+ERROR | 2016-05-27 15:42:59,740 | Common.java | 72 | Unable to Open Application
+ INFO | 2016-05-27 15:42:59,742 | Common.java | 64 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | Element time out set
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | ##### Start of Test Case : Search a hotel #####
+ INFO | 2016-05-27 15:42:59,743 | Common.java | 64 | Test Case Name: TC_002
+ INFO | 2016-05-27 15:42:59,744 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Test Data Set Name: TC_002
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Execution Flag: Execute
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Test Data Set Name: TC_002_01
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Execution Flag: YES
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Test Data Set Name: 
+ INFO | 2016-05-27 15:42:59,841 | Common.java | 64 | Execution Flag: 
+ INFO | 2016-05-27 15:42:59,842 | Common.java | 64 | Getting value of Browser from Test Configuration file : chrome
+ INFO | 2016-05-27 15:43:01,171 | Common.java | 64 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-05-27 15:43:04,896 | Common.java | 64 | Opened Application Successfully
+ERROR | 2016-05-27 15:43:04,896 | Common.java | 72 | Unable to Open Application
+ INFO | 2016-05-27 15:43:04,897 | Common.java | 64 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:43:04,897 | Common.java | 64 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-05-27 15:43:04,897 | Common.java | 64 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-05-27 15:43:04,898 | Common.java | 64 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:43:04,898 | Common.java | 64 | Element time out set
+ INFO | 2016-05-27 15:43:04,898 | Common.java | 64 | ##### Start of Test Case : Book a hotel #####
+ INFO | 2016-05-27 15:43:04,898 | Common.java | 64 | Test Case Name: TC_003
+ INFO | 2016-05-27 15:43:04,898 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-05-27 15:43:04,967 | Common.java | 64 | Test Data Set Name: TC_003
+ INFO | 2016-05-27 15:43:04,968 | Common.java | 64 | Execution Flag: Execute
+ INFO | 2016-05-27 15:43:04,968 | Common.java | 64 | Test Data Set Name: TC_003_01
+ INFO | 2016-05-27 15:43:04,968 | Common.java | 64 | Execution Flag: YES
+ INFO | 2016-05-27 15:43:04,968 | Common.java | 64 | Test Data Set Name: 
+ INFO | 2016-05-27 15:43:04,968 | Common.java | 64 | Execution Flag: 
+ INFO | 2016-05-27 15:43:04,969 | Common.java | 64 | Getting value of Browser from Test Configuration file : chrome
+ INFO | 2016-05-27 15:43:06,738 | Common.java | 64 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2016-05-27 15:43:11,872 | Common.java | 64 | Opened Application Successfully
+ERROR | 2016-05-27 15:43:11,872 | Common.java | 72 | Unable to Open Application
+ INFO | 2016-05-27 15:43:11,873 | Common.java | 64 | Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:43:11,873 | Common.java | 64 | Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2016-05-27 15:43:11,873 | Common.java | 64 | Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2016-05-27 15:43:11,874 | Common.java | 64 | Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2016-05-27 15:43:11,874 | Common.java | 64 | Element time out set
+ INFO | 2016-05-27 15:43:11,874 | Common.java | 64 | ##### Start of Test Case : New User Register functionality #####
+ INFO | 2016-05-27 15:43:11,874 | Common.java | 64 | Test Case Name: TC_005
+ INFO | 2016-05-27 15:43:11,874 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2016-05-27 15:43:11,935 | Common.java | 64 | Test Data Set Name: TC_005
+ INFO | 2016-05-27 15:43:11,935 | Common.java | 64 | Execution Flag: Execute
+ INFO | 2016-05-27 15:43:11,935 | Common.java | 64 | Test Data Set Name: TC_005_01
+ INFO | 2016-05-27 15:43:11,936 | Common.java | 64 | Execution Flag: YES
+ INFO | 2016-05-27 15:43:11,936 | Common.java | 64 | Test Data Set Name: 
+ INFO | 2016-05-27 15:43:11,936 | Common.java | 64 | Execution Flag: 
+ INFO | 2016-05-27 15:43:11,936 | Common.java | 64 | Getting value of Browser from Test Configuration file : chrome
+ INFO | 2016-05-27 15:43:13,660 | Common.java | 64 | Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ERROR | 2016-05-27 15:43:16,185 | Common.java | 72 | Unable to Open Application
+ INFO | 2016-05-27 15:43:16,265 | Common.java | 64 | Getting value of SendMail(Yes/No) from Test Configuration file : No
+ INFO | 2016-05-27 15:43:16,265 | Common.java | 64 | Getting value of SendMsg(Yes/No) from Test Configuration file : No
+ INFO | 2016-05-27 15:43:16,266 | Common.java | 64 | Getting value of VoiceCall(Yes/No) from Test Configuration file : No
+ INFO | 2016-05-27 15:43:16,266 | Common.java | 64 | ###################################
+ INFO | 2016-05-27 15:43:16,266 | Common.java | 64 | Script Execution Complete
+ INFO | 2016-05-27 15:43:16,266 | Common.java | 64 | ####################################

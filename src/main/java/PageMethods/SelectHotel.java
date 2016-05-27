@@ -17,7 +17,7 @@ public class SelectHotel  extends Page{
 	}
 	@FindBy(xpath="//*[@id='radiobutton_0']")
 	private WebElement rbSelect;
-	
+
 	@FindBy(xpath="//input[@name='continue']")
 	private WebElement btnContinue;
 	@FindBy(xpath="//input[@name='cancel']")
@@ -30,7 +30,7 @@ public class SelectHotel  extends Page{
 		return false;
 	}
 
-@Override
+	@Override
 	protected void waitForPageLoad() {
 		try{
 			new WebDriverWait(browser,60).
@@ -43,15 +43,13 @@ public class SelectHotel  extends Page{
 
 	public void Selecthotel()
 	{
-		
-				
-			clickOn(rbSelect,"Selected");			
-					
-		
-	//	System.out.println(Common.retrieve("rbSelect")+ "radio");
+		clickOn(rbSelect,"Selected");
+		Common.testStepPassed("Selected radio button");
+		//	System.out.println(Common.retrieve("rbSelect")+ "radio");
 		//selectByVisisbleValue(rbSelect,"Select",Common.retrieve("rbSelect"));
-		clickOn(btnContinue,"Continue");		
+		clickOn(btnContinue,"Continue");
+		Common.testStepPassed("Clicked on Continue Button");
 	}
-	
-	
-	}
+
+
+}

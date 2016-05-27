@@ -9,25 +9,27 @@ import org.testng.annotations.Test;
 import Utilities.Common;
 import Utilities.GenericKeywords;
 
+import com.relevantcodes.extentreports.ExtentReports;
+
 public class LaunchScript extends Common {
 
 	
+	//public static void main(String[] args) {
 	@Test
 	public void Launch(){
 		try {			
-			startup();
+			startup();			
 			TestNG testng = new TestNG();
 			List<String> suites = new ArrayList<String>();
 			suites.add("./Config/testng.xml");			
-			testng.setOutputDirectory(GenericKeywords.outputDirectory+"/testng");
-			testng.setTestSuites(suites);
+			testng.setTestSuites(suites);			
+			GenericKeywords.extent = new ExtentReports(GenericKeywords.outputDirectory+"/Results.html", true);
 			testng.run();		
 
 		} catch (Exception e) {
 			writeToLogFile("error", e.toString());
 		} finally {
-			try {
-				report();
+			try {								
 				cleanup();
 				// logout();
 

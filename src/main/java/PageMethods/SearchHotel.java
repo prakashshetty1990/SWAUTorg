@@ -74,16 +74,21 @@ public class SearchHotel extends Page {
 		selectByVisisbleText(weRoomnos,"NumRooms",Common.retrieve("RoomNos"));
 		
 		enterText(Checkindate,Common.retrieve("CheckInDate")); 
+		Common.testStepPassed("Selected Check In Date as ->"+Common.retrieve("CheckInDate") );
 		enterText(Checkoutdate,Common.retrieve("CheckOutDate")); 
+		Common.testStepPassed("Selected Check Out Date as ->"+Common.retrieve("CheckOutDate") );
 		selectByVisisbleText(weAdults,"Adults",Common.retrieve("Adults"));
 		selectByVisisbleText(weChildren,"Children",Common.retrieve("Children"));
 		clickOn(btnSearch,"Search");
+		Common.testStepPassed("Clicked on Seach button");
+		Common.takeScreenshot("SearchResults");
 	return new SelectHotel(browser);
 	}
 
 	public void verifyLoginpage() {
 		if (isElementPresent(By.xpath("//input[@name='Reset']"))) {
-			Common.testStepPassed("Successfully logged in to the application" );	
+			Common.testStepPassed("Successfully logged in to the application" );
+			Common.takeScreenshot("LoggedIn");
 		}else{
 			Common.testStepFailed("Unable to login to application, Check Username and password" );
 		}

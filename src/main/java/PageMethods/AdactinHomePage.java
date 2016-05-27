@@ -88,8 +88,10 @@ public class AdactinHomePage extends Page {
 						
 		//System.out.println("username -> "+Common.retrieve("UserName"));
 		enterText(weUsername,Common.retrieve("UserName")); 
-		
-		enterText(wePassword,Common.retrieve("Password")); 
+		Common.testStepPassed("Entered Username ->"+ Common.retrieve("UserName"));
+		enterText(wePassword,Common.retrieve("Password"));
+		Common.testStepPassed("Entered Password ->"+ Common.retrieve("UserName"));
+		Common.takeScreenshot("EnteredUsernamePassword");
 		clickOn(btnLogin,"Login");
 		return new SearchHotel(browser);
 	}
@@ -105,15 +107,22 @@ public class AdactinHomePage extends Page {
 	public NewUserRegistration UserRegistration()
 	{
 		clickOn(weNewRegister,"New Registration");
-		enterText(weNewusername,Common.retrieve("UserName")); 
-		enterText(weNewPassword,Common.retrieve("Password")); 
-		enterText(weRePassword,Common.retrieve("RePassword")); 
-		enterText(weFullName,Common.retrieve("FullName")); 
-		enterText(weEmailAdd,Common.retrieve("EmailAddress")); 
+		Common.testStepPassed("Clicked on link->New Registration");
+		enterText(weNewusername,Common.retrieve("UserName"));
+		Common.testStepPassed("Entered UserName->"+Common.retrieve("UserName"));
+		enterText(weNewPassword,Common.retrieve("Password"));
+		Common.testStepPassed("Entered Password->"+Common.retrieve("Password"));
+		enterText(weRePassword,Common.retrieve("RePassword"));
+		Common.testStepPassed("Re Entered Password->"+Common.retrieve("RePassword"));
+		enterText(weFullName,Common.retrieve("FullName"));
+		Common.testStepPassed("Entered Full Name->"+Common.retrieve("FullName"));
+		enterText(weEmailAdd,Common.retrieve("EmailAddress"));
+		Common.testStepPassed("Entered Email Address->"+Common.retrieve("EmailAddress"));
 		clickOn(chkAgree,"Agree");
+		Common.testStepPassed("Clicked on Agree checkbox");
+		Common.takeScreenshot("EnteredAllMandatoryFields");
 		clickOn(btnRegister,"Register");
-		
-		
+		Common.testStepPassed("Clicked on Register Button");		
 		return new NewUserRegistration(browser);
 	}
 	

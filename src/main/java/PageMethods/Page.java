@@ -112,8 +112,8 @@ public abstract class Page {
 		try{
 			waitForElement(we);
 			if (isElementPresent(we)){
-				we.click();
-				Common.testStepPassed("Clicked on WebElement-"+ elem );	
+				we.click();				
+				//Common.testStepPassed("Clicked on WebElement-"+ elem );	
 			}}
 		catch (Exception ex) {
 			Common.testStepFailed("Uanble to click on Element-"+ elem);
@@ -144,8 +144,7 @@ public abstract class Page {
 			waitForElement(we);
 			if(isElementPresent(we)){
 				we.clear();
-				we.sendKeys(text);	
-				Common.testStepPassed("Entered value in the text field->"+ text);		
+				we.sendKeys(text);							
 			}
 		}
 		catch (RuntimeException ex) {			

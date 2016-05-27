@@ -41,9 +41,9 @@ public class AdactinApplication {
 		try {
 			browser.get(url);
 			browser.manage().window().maximize();
-			GenericKeywords.testStepPassed("Opened Application Successfully");			
+			//GenericKeywords.testStepPassed("Opened Application Successfully");			
 		} catch (Exception e) {			
-			GenericKeywords.testStepFailed("Unable to Open Application");
+			//GenericKeywords.testStepFailed("Unable to Open Application");
 		}
 		return new  AdactinHomePage(browser);
 
