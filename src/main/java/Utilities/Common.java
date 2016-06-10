@@ -161,7 +161,7 @@ public class Common
     }
   }
   
-  public void createZipFileOfReport(String reportPath,String testCaseQCName){
+  public void createZipFileOfReport(String reportPath){
 		System.out.println(reportPath);
 		File dir = new File(reportPath);
 
@@ -180,8 +180,7 @@ public class Common
 			ZipOutputStream zout = new ZipOutputStream(
 					new BufferedOutputStream(fout));
 
-			for (int i = 0; i < files.size(); i++) {
-			if(files.get(i).getName().contains(testCaseQCName)){
+			for (int i = 0; i < files.size(); i++) {			
 				b = new byte[1024];
 				FileInputStream fin = new FileInputStream(
 						files.get(i));
@@ -192,9 +191,7 @@ public class Common
 					zout.write(b, 0, length);
 				}
 				zout.closeEntry();
-				fin.close();	
-			}
-				
+				fin.close();				
 			}
 			zout.close();
 

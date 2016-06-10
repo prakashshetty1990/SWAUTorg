@@ -31,6 +31,7 @@ public class LaunchScript extends Common {
 		} finally {
 			try {								
 				cleanup();
+				createZipFileOfReport(GenericKeywords.outputDirectory);
 				// logout();
 
 			} catch (Exception e) {
