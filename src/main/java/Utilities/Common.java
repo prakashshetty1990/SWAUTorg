@@ -6,17 +6,23 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import javax.imageio.ImageIO;
 
 import jxl.Sheet;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -154,6 +160,48 @@ public class Common
       System.out.println(e.toString());
     }
   }
+  
+  public void createZipFileOfReport(String reportPath,String testCaseQCName){
+		System.out.println(reportPath);
+		File dir = new File(reportPath);
+
+		try {
+			System.out.println("Getting all files in "
+					+ dir.getCanonicalPath()
+					+ " including those in subdirectories");
+			List<File> files = (List<File>) FileUtils.listFiles(
+					dir, TrueFileFilter.INSTANCE,
+					TrueFileFilter.INSTANCE);
+			byte[] b;
+			java.io.File curdir = new java.io.File(".");
+			String strPath = curdir.getCanonicalPath()+"\\JenkinsResults\\";
+			FileOutputStream fout = new FileOutputStream(strPath+"\\"
+					+ "TestExecutionReport.zip");
+			ZipOutputStream zout = new ZipOutputStream(
+					new BufferedOutputStream(fout));
+
+			for (int i = 0; i < files.size(); i++) {
+			if(files.get(i).getName().contains(testCaseQCName)){
+				b = new byte[1024];
+				FileInputStream fin = new FileInputStream(
+						files.get(i));
+				zout.putNextEntry(new ZipEntry(files.get(i)
+						.getName()));
+				int length;
+				while (((length = fin.read(b, 0, 1024))) > 0) {
+					zout.write(b, 0, length);
+				}
+				zout.closeEntry();
+				fin.close();	
+			}
+				
+			}
+			zout.close();
+
+		} catch (Exception e) {
+			System.out.println("Exception caught");
+		}
+	}
   
 
 
