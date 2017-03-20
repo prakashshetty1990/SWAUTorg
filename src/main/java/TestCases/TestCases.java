@@ -71,7 +71,8 @@ public class TestCases extends Common {
 			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
 			
 			searchHotel = adactinHomePage.Login();			
-			searchHotel.verifyLoginpage();
+			if(searchHotel.verifyLoginpage())
+				searchHotel.logoutFromApp();
 			
 			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
 			}

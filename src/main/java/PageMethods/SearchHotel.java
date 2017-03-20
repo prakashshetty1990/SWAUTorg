@@ -40,6 +40,12 @@ public class SearchHotel extends Page {
 	@FindBy(xpath="//input[@name='Reset']")
 	private WebElement Reset;
 	
+	@FindBy(xpath="//a[text()='Logout']")
+	private WebElement lnkLogout;
+
+	@FindBy(xpath="//a[text()='Click here to login again']")
+	private WebElement lnkLoginAgain;
+	
 	protected static String HOME_PAGE_TITLE = "AdactIn.com - Select Hotel";
 
 	public SearchHotel(WebDriver browser) {
@@ -85,17 +91,28 @@ public class SearchHotel extends Page {
 	return new SelectHotel(browser);
 	}
 
-	public void verifyLoginpage() {
+	public boolean verifyLoginpage() {
 		if (isElementPresent(By.xpath("//input[@name='Reset']"))) {
 			Common.testStepPassed("Successfully logged in to the application" );
 			Common.takeScreenshot("LoggedIn");
+			return true;
 		}else{
+			
 			Common.testStepFailed("Unable to login to application, Check Username and password" );
-		}
-				
-		
+			return false;
+		}		
 	}
 	
+	
+	public AdactinHomePage logoutFromApp(){
+		try{
+			clickOn(lnkLogout, "Logout Link");
+			clickOn(lnkLoginAgain, "Login Again Link");
+		}catch(Exception ex){
+			Common.testStepFailed("Exception Caught, Message is->"+ex.getMessage());			
+		}
+		return new AdactinHomePage(browser);
+	}
 	
 	
 
