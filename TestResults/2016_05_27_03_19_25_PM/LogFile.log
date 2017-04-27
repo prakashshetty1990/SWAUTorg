@@ -1,5 +1,0 @@
- INFO | 2016-05-27 15:19:25,581 | Common.java | 64 | Startup activites...
- INFO | 2016-05-27 15:19:25,583 | Common.java | 64 | Test Output Directory creation successful :D:\Prakashs_Backup\DemoWorkspaceFinal\SWAUTorg\TestResults\2016_05_27_03_19_25_PM
- INFO | 2016-05-27 15:19:25,584 | Common.java | 64 | Log File creation successful : LogFile.log
- INFO | 2016-05-27 15:19:25,891 | Common.java | 64 | Getting value of Tc_Settings_Excelpath from Test Configuration file : ./src/test/resources/TestCaseSettings.xls
- INFO | 2016-05-27 15:19:26,010 | Common.java | 64 | Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
