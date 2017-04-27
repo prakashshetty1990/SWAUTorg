@@ -143,7 +143,7 @@ public abstract class Page {
 		try{
 			waitForElement(we);
 			if(isElementPresent(we)){
-				we.clear();
+				//we.clear();
 				we.sendKeys(text);							
 			}
 		}

@@ -24,6 +24,7 @@ import jxl.Sheet;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.LogStatus;
@@ -286,12 +287,11 @@ public class Common
     String scrPath = GenericKeywords.outputDirectory + "\\Screenshots";
     File file = new File(scrPath);
     file.mkdir();
-        
-    GenericKeywords.driver = GenericKeywords.driver;
 
     try
     {
-      scrFile = (File)((RemoteWebDriver) GenericKeywords.driver).getScreenshotAs(OutputType.FILE);
+      //scrFile = (File)((RemoteWebDriver) GenericKeywords.driver).getScreenshotAs(OutputType.FILE);
+    	scrFile = (File) ((TakesScreenshot) GenericKeywords.driver).getScreenshotAs(OutputType.FILE);
       FileUtils.copyFile(scrFile, new File(scrPath + "\\" + filename + ".png"));
     }
     catch (Exception e)
@@ -446,7 +446,7 @@ public class Common
   public static void takeScreenshot(String comment)
   {
     GenericKeywords.screenshotNo += 1;        
-    screenShot("Screenshot" + GenericKeywords.screenshotNo);
+    captureScreenShot("Screenshot" + GenericKeywords.screenshotNo);
     embedScreenshot("orange", GenericKeywords.outputDirectory + "\\Screenshots" + "\\Screenshot" + GenericKeywords.screenshotNo);
   }
   

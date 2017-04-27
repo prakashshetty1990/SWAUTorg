@@ -11,7 +11,6 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.SessionNotFoundException;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
@@ -67,7 +66,7 @@ public class AdactinApplication {
 		try{
 			browser.manage().deleteAllCookies();
 		}
-		catch(SessionNotFoundException ex){
+		catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}
 	}
@@ -82,13 +81,9 @@ public class AdactinApplication {
 		WebDriver driver = null;
 		if (browserName.equalsIgnoreCase("firefox")) {
 			
-			ProfilesIni profilesIni = new ProfilesIni();
-
-			FirefoxProfile profile = profilesIni.getProfile("default");
-
-			profile.setEnableNativeEvents(true);
-
-			driver = new FirefoxDriver(profile);
+			System.setProperty("webdriver.gecko.driver", 
+				     getRelativePath()+"/ext/BrowserSpecificDrivers/geckodriver.exe");								
+				   driver = new FirefoxDriver();
 
 		}
 		if(browserName.equalsIgnoreCase("chrome")){

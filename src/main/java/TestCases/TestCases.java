@@ -1,10 +1,14 @@
 package TestCases;
 
 import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.xml.sax.SAXException;
 
 import PageMethods.AdactinApplication;
 import PageMethods.AdactinHomePage;
@@ -15,6 +19,7 @@ import PageMethods.SearchHotel;
 import PageMethods.SelectHotel;
 import Utilities.Common;
 import Utilities.GenericKeywords;
+import Utilities.XmlValidation;
 
 @Listeners({ Utilities.TestListener.class })
 public class TestCases extends Common {
@@ -68,13 +73,13 @@ public class TestCases extends Common {
 		
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
-			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoStart(testDataSet);
 			
 			searchHotel = adactinHomePage.Login();			
 			if(searchHotel.verifyLoginpage())
 				searchHotel.logoutFromApp();
 			
-			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoEnd(testDataSet);
 			}
 		testEnd();
 
@@ -89,12 +94,12 @@ public class TestCases extends Common {
 		
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
-			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoStart(testDataSet);
 			
 			searchHotel = adactinHomePage.Login();			
 			selectHotel=searchHotel.BookHotel();
 			
-			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoEnd(testDataSet);
 			}
 		testEnd();
 
@@ -109,13 +114,13 @@ public class TestCases extends Common {
 		
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
-			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoStart(testDataSet );
 			
 			searchHotel = adactinHomePage.Login();			
 			selectHotel=searchHotel.BookHotel();
 			selectHotel.Selecthotel();
 			
-			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoEnd(testDataSet);
 			}
 		testEnd();
 
@@ -130,11 +135,11 @@ public class TestCases extends Common {
 		
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
-			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoStart(testDataSet);
 			
 			ForgetPswd=adactinHomePage.forgetpassword();
 			
-			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoEnd(testDataSet );
 			}
 		testEnd();
 
@@ -149,11 +154,38 @@ public class TestCases extends Common {
 		
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
-			testStepInfoStart("########### Start of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoStart(testDataSet);
 			
 			Registrationpage=adactinHomePage.UserRegistration();
 			
-			testStepInfoEnd("########### End of Test Case Data Set: "+testDataSet + " ###########");
+			testStepInfoEnd(testDataSet );
+			}
+		testEnd();
+
+	}
+	
+	
+	@Test(alwaysRun = true)
+	public void TC_006() {
+		String strName = new Exception().getStackTrace()[0].getMethodName();
+		testStart(strName,"XML Validation");
+				
+		
+		for (String testDataSet : GenericKeywords.testCaseDataSets) {
+			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
+			testStepInfoStart(testDataSet);
+			
+			XmlValidation.SoapCollateralPositionData();	
+			
+			//String text;
+			try {
+				XmlValidation.SoapCollateralPositionData();	
+				XmlValidation.validateXml();			
+			} catch (Exception e) {
+				
+			} 
+						
+			testStepInfoEnd(testDataSet);
 			}
 		testEnd();
 

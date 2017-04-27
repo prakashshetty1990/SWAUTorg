@@ -85,13 +85,12 @@ public class AdactinHomePage extends Page {
 	
 	public SearchHotel Login()
 	{
-						
-		//System.out.println("username -> "+Common.retrieve("UserName"));
 		enterText(weUsername,Common.retrieve("UserName")); 
 		Common.testStepPassed("Entered Username ->"+ Common.retrieve("UserName"));
 		enterText(wePassword,Common.retrieve("Password"));
 		Common.testStepPassed("Entered Password ->"+ Common.retrieve("UserName"));
 		Common.takeScreenshot("EnteredUsernamePassword");
+		weUsername.click();
 		clickOn(btnLogin,"Login");
 		return new SearchHotel(browser);
 	}
