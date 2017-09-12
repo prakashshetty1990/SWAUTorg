@@ -43,14 +43,11 @@ public class TestCases extends Common {
 	
 	
 	public void testStart(String strName,String testCaseDescription) {
-	
-
 		GenericKeywords.testFailure = false;
 		GenericKeywords.currentStep = 0;
 		reportStart(strName,testCaseDescription);
 		adactinApplication=new AdactinApplication();
-		adactinHomePage=adactinApplication.openAdactinApplication();
-			
+		adactinHomePage=adactinApplication.openAdactinApplication();			
 	}
 
 	public void testEnd() {

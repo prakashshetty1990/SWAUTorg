@@ -1,6 +1,7 @@
 package PageMethods;
 
 
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.Common;
+import Utilities.GenericKeywords;
 
 
 
@@ -55,8 +57,7 @@ public abstract class Page {
 		if (!isValidPage()) {
 			String stepName="Navigation to Page";
 			String message="The application is not in the expected page , current page: " + 
-					browser.getTitle() +" Page.";
-			//report.reportFailEvent(stepName, message);			
+					browser.getTitle() +" Page.";					
 		}
 	}
 	
@@ -64,125 +65,68 @@ public abstract class Page {
 	/**
 	 * Check if the element is present in the page
 	 * @param element WebElement need to check
-	 * @return True if present
+	 * @return True/False
 	 */
 	protected boolean isElementPresent(WebElement element){
 		try{
-			return element.isDisplayed();			
-		}catch(NoSuchElementException ex){
-			return false;
-		}catch(StaleElementReferenceException ex2){
-			return false;
+			new WebDriverWait(browser, 2).until(ExpectedConditions
+					.elementToBeClickable(element));
+			if(element.isDisplayed()){
+				return true;
+			}else{
+				return false;
+			}
+		}catch(Exception ex){
+			return false;		
 		}
 	}
 
-	
+
 	/**
 	 * Check if the element is present in the page
-	 * @param element WebElement need to check
-	 * @return True if present
+	 * @param Element locator of type By
+	 * @return True/False
 	 */
 	public boolean isElementPresent(By by){
 		try{
-			return browser.findElement(by).isDisplayed();
-		}catch(NoSuchElementException ex){
-			return false;
-		}catch(StaleElementReferenceException ex2){
-			return false;
+			new WebDriverWait(browser, 2).until(ExpectedConditions
+					.elementToBeClickable(by));
+			if(browser.findElement(by).isDisplayed()){
+				return true;
+			}else{
+				return false;
+			}
+		}catch(Exception ex){
+			return false;		
 		}
 	}
 
 
 	/**
-	 * Check if the element is present in the page and report error
+	 * Check if the element is present in the page and report
 	 * @param element
-	 * @param errorMsg error message need to report if the element not present
+	 * @param Name of the Element
+	 * @param Name of the page
 	 */
-	protected void isElementPresent(WebElement element,String stepName,String errorMsg) {
-		if(!isElementPresent(element)){
-			//report.reportFailEvent(stepName, errorMsg);
+	protected void isElementPresentReport(WebElement element,String elemName,String pageName) {
+		waitForIsClickable(element);
+		if(isElementPresent(element)){
+			Common.testStepPassed(elemName + "Element is displayed in "+pageName+" page" );
+		}else{
+			Common.testStepFailed(elemName + "Element is not displayed in "+pageName+" page" );
 		}
 	}
 
-	/***
-	 * Method to click on a link(WebElement button)
-	 * @param : Element Name
-	 ***/
-	public void clickOn(WebElement we,String elem) {		
-		try{
-			waitForElement(we);
-			if (isElementPresent(we)){
-				we.click();				
-				//Common.testStepPassed("Clicked on WebElement-"+ elem );	
-			}}
-		catch (Exception ex) {
-			Common.testStepFailed("Uanble to click on Element-"+ elem);
-		} 
-	}
 
-	/**
-	 * Method to click on a link(WebElement link)
-	 * @param : Element Name
-	 */
-	protected void jsClick(WebElement we,String elem) {		
-		try{			
-			((JavascriptExecutor) browser).executeScript("arguments[0].click();",we);
-			Common.testStepPassed("Clicked on -"+ elem +"- Element");			
-		}catch (RuntimeException ex) {
-			Common.testStepFailed("Uanble to click on -"+ elem +"- Element");
-		} 
-	}
-			
-	/***
-	 * Method to enter text in a textbox
-	 * 
-	 * @param : Element Name
-	 * @return :
-	 ***/
-	public void enterText(WebElement we,String text){
-		try{
-			waitForElement(we);
-			if(isElementPresent(we)){
-				//we.clear();
-				we.sendKeys(text);							
-			}
-		}
-		catch (RuntimeException ex) {			
-			Common.testStepFailed("Unable to enter text in the text field->"+ text);
-		} 
-	}
-
-	/***
-	 * Method to clear text in a textbox
-	 * 
-	 * @param : Element Name
-	 * @return :
-	 ***/
-	public void clearText(WebElement we){
-		try{
-			waitForElement(we);
-			if(isElementPresent(we)){
-				we.clear();				
-			}
-		}catch(RuntimeException ex){
-			Common.testStepFailed("Unable to clear text in the text field");
-		}
-	}
-
-		
 	/***
 	 * Method to switch to child window
 	 * @param : parentWindow
 	 ***/
-	public void navigateToNewWindow(String pageTitle) {
+	public void navigateToWindowWithPageTitle(String pageTitle,int expectedNumberOfWindows) {
 		boolean blnNavigate=false;
-		try{			
-			Set<String> handles = browser.getWindowHandles();
-			if(handles.size()==1){
-				sleep(7000);
-				handles = browser.getWindowHandles();
-			}
-			if(handles.size()>1){
+		try{				
+			Set<String> handles = browser.getWindowHandles();			
+			if(waitForNewWindow(expectedNumberOfWindows)){
 				for (String windowHandle : handles) {					
 					String strActTitle = browser.switchTo().window(windowHandle).getTitle();
 					if(strActTitle.contains(pageTitle)){
@@ -197,11 +141,11 @@ public abstract class Page {
 					Common.testStepFailed("Unable to Navigate to the page -"+pageTitle);
 				}
 			}else{
-				Common.testStepFailed("Unable to Navigate to the page -"+pageTitle);
+				Common.testStepFailed("New window the with page Title "+pageTitle+" is not loaded");
 			}
 		}
 		catch(RuntimeException ex){
-			Common.testStepFailed("Unable to Navigate to the page -"+pageTitle);
+			Common.testStepFailed("Unable to Navigate to the page -"+pageTitle+" Exception is->"+ex.getMessage());
 		}
 	}
 
@@ -210,15 +154,26 @@ public abstract class Page {
 	 * @param : parentWindow
 	 ***/
 	public void navigatoToParentWindow(String parentWindow) {
-		browser.switchTo().window(parentWindow);
+		try{
+			browser.switchTo().window(parentWindow);
+		}catch(Exception ex){
+			Common.testStepFailed("Unable to Navigate to Parent Window");
+		}
 	}
-	
+
 	public void jsmoveToElement(WebElement elem){
-		
-		String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
-		JavascriptExecutor js = (JavascriptExecutor) browser;
-		js.executeScript(mouseOverScript, elem);
-		
+		try {
+			String str = elem.toString();
+			if(isElementPresent(elem)){
+				String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
+				JavascriptExecutor js = (JavascriptExecutor) browser;
+				js.executeScript(mouseOverScript, elem);
+			}else{
+				Common.testStepFailed("Element is not displayed to mousehover ->"+str);
+			}
+		}catch(Exception ex){
+			Common.testStepFailed("Unable to mouse hover on the element,Exception is->"+ex.getMessage());
+		}
 	}
 
 	/***
@@ -226,9 +181,11 @@ public abstract class Page {
 	 * @return      : 
 	 ***/
 	public void closeCurrentPage(){
-		String str=browser.getTitle();
+		String str=null;
 		try {
+			browser.getTitle();
 			browser.close();
+			sleep(1000);			
 			Set<String> windows=browser.getWindowHandles();
 			for(String window:windows){
 				browser.switchTo().window(window);
@@ -240,79 +197,581 @@ public abstract class Page {
 		}
 	}
 
-	
+
 	//*****************************************************************************************************************//
-	//Alert pop ups
+	//Start Alert pop ups
 	//*****************************************************************************************************************//
+
+
 	/***
 	 * Method to accept and close alert and return the text within the alert
-	 * 
-	 * @param : 
-	 * @return :
+	 * @return :alert message
 	 ***/
 	public String closeAlertAndReturnText(){
 		String alertMessage=null;
 		try{		
-			WebDriverWait wait = new WebDriverWait(browser, 40);
-			wait.until(ExpectedConditions.alertIsPresent());
-			Alert alert = browser.switchTo().alert();
-			alertMessage=alert.getText();
-			//report.reportPassEvent("alertMessage", "alertMessage displayed is->"+alertMessage);
-			alert.accept();
+			if(waitForAlert()){
+				Alert alert = browser.switchTo().alert();
+				alertMessage=alert.getText();			
+				alert.accept();
+				Common.testStepPassed("Closed the alert successfully with text->"+alertMessage);
+			}
 		}catch(Exception Ex){
-			//report.reportFailEvent("Exception Caught", "Message is->"+Ex.getMessage());
+			Common.testStepFailed("Exception Caught while accepting the alert, Message is->"+Ex.getMessage());
 		}
 		return alertMessage;
 	}
 
 
+	/***
+	 * Method to check for an alert for 20 seconds
+	 * @param       : Element Name
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
 
-	//*****************************************************************************************************************//
-	//waits
-	//*****************************************************************************************************************//
-
-	/**
-	 * Method to wait for element to load in the page
-	 * @param WebElement
-	 */
-	protected Boolean waitForElement(By by) {
-		try {
-			new WebDriverWait(browser,30).
-			until(ExpectedConditions.presenceOfElementLocated(by));
-		} catch (Exception ex) {
+	public boolean isAlertPresent(){
+		try{
+			WebDriverWait wait = new WebDriverWait(browser, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
+			return true;
+		}catch(Exception e){			
 			return false;
 		}
-		return true;
 	}
-	
+
+	//*****************************************************************************************************************//
+	//End Alert pop ups
+	//*****************************************************************************************************************//
+
+
+	//*****************************************************************************************************************//
+	//Start wait
+	//*****************************************************************************************************************//
+
+
 	/**
 	 * Method to wait for element to load in the page
 	 * @param WebElement
 	 */
-
-	protected Boolean waitForElement(WebElement we) {
+	protected Boolean waitForIsClickable(WebElement we) {
+		String str = null;
 		try {
-			new WebDriverWait(browser, 30).until(ExpectedConditions
-					.visibilityOf(we));
-			return true;
-		} catch (RuntimeException ex) {
+			str = we.toString();
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.elementToBeClickable(we));			
+			if(isElementPresent(we)){
+				return true;
+			}else{
+				Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
+				return false;
+			}			
+		} catch (Exception ex) {
+			Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
 			return false;
 		}    	
+	}
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param WebElement
+	 */
+	protected Boolean waitForElementPresent(WebElement we) {
+		String str = null;
+		try {
+			str = we.toString();
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.visibilityOf(we));			
+			if(isElementPresent(we)){
+				return true;
+			}else{
+				Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
+				return false;
+			}			
+		} catch (Exception ex) {
+			Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
+			return false;
+		}    	
+	}
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param WebElement
+	 */
+	protected Boolean waitForElementPresent(By by) {
+		String str = null;
+		try {
+			str = by.toString();
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.visibilityOfElementLocated(by));			
+			if(isElementPresent(by)){
+				return true;
+			}else{
+				Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
+				return false;
+			}			
+		} catch (Exception ex) {
+			Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
+			return false;
+		}    	
+	}
+
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param WebElement
+	 */
+	protected Boolean waitForIsClickable(By by) {
+		String str = null;
+		try {
+			str = by.toString();
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.elementToBeClickable(by));			
+			if(isElementPresent(by)){
+				return true;
+			}else{
+				Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
+				return false;
+			}			
+		} catch (Exception ex) {
+			Common.testStepFailed("Element is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
+			return false;
+		}    	
+	}
+
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param by
+	 */
+	protected Boolean waitAndSwitchToFrame(By by) {
+		String str = null;
+		try {
+			str = by.toString();
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.frameToBeAvailableAndSwitchToIt(by));
+			return true;
+		} catch (Exception ex) {
+			Common.testStepFailed("Frame is not displayed after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
+			return false;
+		}    	
+	}
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param Frame Index
+	 */
+	protected Boolean waitAndSwitchToFrame(int intFrameNum) {		
+		try {			
+			/*new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.frameToBeAvailableAndSwitchToIt(intFrameNum));*/
+			return true;
+		} catch (Exception ex) {
+			Common.testStepFailed("Frame is not displayed after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : Frame Index->"+intFrameNum);			
+			return false;
+		}    	
+	}
+
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param by
+	 */
+	protected Boolean waitAndSwitchToFrame(String strFrameName) {		
+		try {			
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.frameToBeAvailableAndSwitchToIt(strFrameName));
+			return true;
+		} catch (Exception ex) {
+			Common.testStepFailed("Frame is not displayed after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : Frame Name->"+strFrameName);			
+			return false;
+		}    	
+	}
+
+	/**
+	 * Method to wait for element to load in the page
+	 * @param WebElement
+	 */
+	protected Boolean waitAndSwitchToFrame(WebElement frame) {
+		String str = null;
+		try {
+			str = frame.toString();
+			/*new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions
+					.frameToBeAvailableAndSwitchToIt(frame));*/
+			return true;
+		} catch (Exception ex) {
+			Common.testStepFailed("Frame is not displayed after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds, : "+str);			
+			return false;
+		}    	
+	}
+
+
+	/***
+	 * Method to wait for the list of elements to be displayed
+	 * @param       : List<WebElement>
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public boolean waitForElementList(List<WebElement> elems){
+		try{
+			WebDriverWait wait = new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime);
+			wait.until(ExpectedConditions.visibilityOfAllElements(elems));			
+			return true;
+		}catch(Exception Ex){
+			Common.testStepFailed("Element List is not visible after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
+			return false;
+		}
+	}
+
+
+	/**
+	 * method to make a thread sleep for customized time in milliseconds
+	 * @param milliseconds
+	 */
+	protected void sleep(int milliseconds){
+		try {
+			Thread.sleep(milliseconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
 	 * Method to wait for Alert present in the page
 	 * @param 
 	 */
-
 	protected Boolean waitForAlert(){
 		try{
-			new WebDriverWait(browser, 60).until(ExpectedConditions.alertIsPresent());
+			new WebDriverWait(browser, GenericKeywords.elementLoadWaitTime).until(ExpectedConditions.alertIsPresent());
 			return true;
 		}catch(Exception Ex){
+			Common.testStepFailed("Alert is not displayed after waiting for "+GenericKeywords.elementLoadWaitTime +" Seconds");
 			return false;
 		}
 	}
+
+
+	/**
+	 * Method to wait for Alert present in the page
+	 * @param 
+	 */
+	protected Boolean waitForNewWindow(int expectedNumberOfWindows){
+		try{
+			//new WebDriverWait(browser, GenericKeywords.pageLoadWaitTime).until(ExpectedConditions.numberOfWindowsToBe(expectedNumberOfWindows));
+			return true;
+		}catch(Exception Ex){
+			Common.testStepFailed("New "+expectedNumberOfWindows+"th Window is not displayed after waiting for "+GenericKeywords.pageLoadWaitTime +" Seconds");
+			return false;
+		}
+	}
+
+	/***
+	 * Method to wait till the page contains expected text
+	 * @param       : txt
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public void waitForText(String txt)
+	{
+		waitForText(txt, GenericKeywords.textLoadWaitTime);
+	}
+
+
+	/***
+	 * Method to wait till the page contains expected text
+	 * @param       : txt,timeout
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public void waitForText(String txt, int timeout){
+		for (int second = 0; second < timeout; second++){
+			if (second == timeout - 1) {
+				Common.testStepFailed("The text '" + txt + "' is not found within " + GenericKeywords.textLoadWaitTime + " seconds timeout");
+				break;
+			}
+			try{
+				if (browser.getPageSource().contains(txt)) {
+					Common.testStepPassed("Text: '" + txt + "' is present");
+				}
+			}
+			catch (Exception localException){
+				sleep(1000);
+			}
+		}
+	}
+
+
+	public boolean waitForDropDown(WebElement weDropDown){
+		try{
+			String str= weDropDown.toString();
+			if(waitForIsClickable(weDropDown)){		
+				for (int second = 0;; second++) {
+					if (second >= 20){
+						Common.testStepFailed("Values in dropdown are not loaded after waiting for 20 seconds");
+						return false;
+					}
+					try { 
+						Select droplist = new Select(weDropDown);
+						if(!droplist.getOptions().isEmpty()){
+							return true;						
+						}
+					} catch (Exception e) {
+						Common.testStepFailed("Exception Caught while waiting for dropdown loading,Message is->"+e.getMessage());
+						return false;
+					}
+					sleep(1000);
+				}
+			}else{
+				Common.testStepFailed("Dropdown Element is not visible, Expected Property of DropDown is->"+str);
+				return false;
+			}
+		}catch(Exception ex){
+			Common.testStepFailed("Exception Caught while waiting for dropdown loading,Message is->"+ex.getMessage());
+			return false;
+		}
+	}
+
+	//*****************************************************************************************************************//
+	//End wait
+	//*****************************************************************************************************************//
+
+
+	//*****************************************************************************************************************//
+	//Start Click 
+	//*****************************************************************************************************************//
+
+	/***
+	 * Method to click on a link(WebElement button)
+	 * @param : WebElement
+	 * @param : Element Name
+	 ***/
+	public void clickOn(WebElement we,String elemName) {		
+		try{
+			waitForIsClickable(we);
+			String strProp = we.toString();
+			if (isElementPresent(we)){
+				we.click();				
+				Common.testStepPassed("Clicked on WebElement-"+ elemName );	
+			}else{
+				Common.testStepFailed("Unable to click on Element "+elemName+", Element with following property is not displayed->"+strProp);
+			}
+		}catch (Exception ex) {
+			Common.testStepFailed("Uanble to click on Element-"+ elemName +", Exception is->"+ex.getMessage());
+		} 
+	}
+
+
+	/**
+	 * Method to click on a link(WebElement link)
+	 * @param : WebElement
+	 * @param : Element Name
+	 */
+	protected void jsClick(WebElement we,String elemName) {		
+		try{			
+			((JavascriptExecutor) browser).executeScript("arguments[0].click();",we);
+			Common.testStepPassed("Clicked on -"+ elemName +"- Element");			
+		}catch (RuntimeException ex) {
+			Common.testStepFailed("Uanble to click on Element-"+ elemName +", Exception is->"+ex.getMessage());
+		} 
+	}
+
+	
+	public String jsGetText(WebElement we){		
+		    return (String) ((JavascriptExecutor) browser).executeScript(
+		        "return jQuery(arguments[0]).text();", we);
+		}	
+	
+	/***
+	 * Method to enter text in a textbox
+	 * @param : WebElement - Textbox
+	 * @param : Text to be entered
+	 * @return :
+	 ***/
+	public boolean enterText(WebElement we,String text){
+		try{
+			waitForIsClickable(we);
+			if(isElementPresent(we)){
+				we.clear();
+				we.sendKeys(text);
+				Common.testStepPassed("Entered text -> "+text);
+				return true;
+			}else{
+				Common.testStepFailed("Element is not displayed, Unable to enter text->"+ text);
+				return false;
+			}
+		}
+		catch (RuntimeException ex) {			
+			Common.testStepFailed("Unable to enter text in the text field->"+ text);
+			return false;
+		} 
+	}
+
+	/***
+	 * Method to clear text in a textbox
+	 * 
+	 * @param : Element Name
+	 * @return :
+	 ***/
+	public boolean clearText(WebElement we){
+		try{
+			waitForIsClickable(we);
+			if(isElementPresent(we)){
+				we.clear();			
+				return true;
+			}else{
+				Common.testStepFailed("Element is not displayed, Unable to Clear text->");
+				return false;
+			}
+		}catch(RuntimeException ex){
+			Common.testStepFailed("Unable to clear text in the text field");
+			return false;
+		}
+	}
+
+
+	/***
+	 * Method to select the checkbox
+	 * @param       : cbElement
+	 * @return      : 
+	 * Modified By  : 
+	 ***/
+	public boolean selectCheckBox(WebElement cbElement){
+		waitForIsClickable(cbElement);
+		if (isElementPresent(cbElement)){
+			try{
+				if (!cbElement.isSelected()){
+					cbElement.click();
+				}
+				Common.testStepPassed("Selected the Checkbox Successfully");
+				return true;
+			}catch (Exception e){
+				Common.testStepFailed("Unable to Select the checkbox->"+e.getMessage());
+				return false;
+			}
+		}else{
+			Common.testStepFailed("Unable to Select the checkbox(Element is not displayed)");
+			return false;
+		}
+	}
+
+
+	/***
+	 * Method to UnSelect the checkbox
+	 * @param       : cbElement
+	 * @return      : 
+	 * Modified By  : 
+	 ***/
+	public boolean unSelectCheckBox(WebElement cbElement)
+	{
+		waitForIsClickable(cbElement);
+		if (isElementPresent(cbElement)) {
+			try{
+				if (cbElement.isSelected()){
+					cbElement.click();
+				}
+				Common.testStepPassed("Unchecked the checkbox");
+				return true;
+			}catch (Exception e){
+				Common.testStepFailed("Unable to check the checkbox->"+e.getMessage());
+				return false;
+			}
+		}else{
+			Common.testStepFailed("Unable to UnSelect the checkbox(Element is not displayed)");
+			return false;
+		}
+	}
+
+	/***
+	 * Method to hover over an element
+	 * @param       : weMainMenuElement,weSubMenuElement
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public void clickOnSubMenu(WebElement weMain,WebElement weSub ){		
+		try{
+			String strMain = weMain.toString();
+			if(isElementPresent(weMain)){
+				Actions action = new Actions(browser);
+				action.moveToElement(weMain).click().perform();			
+				Common.testStepPassed("Hover over the Main menu item successfully");
+			}else{
+				Common.testStepFailed("Unabel to hover Main menu(Element is not displayed), Expected Property of element is->"+strMain);
+			}
+		}catch(Exception Ex){
+			Common.testStepFailed("Exception Caught while hoverOver the main menu Item,Message is->"+Ex.getMessage());
+		}
+		try{
+			String strSub = weSub.toString();
+			waitForIsClickable(weSub);
+			if(isElementPresent(weSub)){				
+				weSub.click();
+				Common.testStepPassed("Clicked on the Sub menu item successfully");
+			}else{
+				Common.testStepFailed("Sub Menu Element is not displayed, Expected Property of element is->"+strSub);
+			}
+		}catch(Exception ex){
+			Common.testStepFailed("Unable to Click on Sub menu Item,Exception is->"+ex.getMessage());
+		}		
+	}
+
+
+	/***
+	 * Method to hover over an element
+	 * @param       : WebElement we
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public boolean moveToElement(WebElement we){				
+		try {
+			String strMain = we.toString();
+			if(isElementPresent(we)){
+				Actions action = new Actions(browser);
+				action.moveToElement(we).build().perform();
+				return true;
+			}else{
+				Common.testStepFailed("Unable to move to element as element is not displayed, Expected Property of element is->"+strMain);
+				return false;
+			}
+		} catch (Exception e) {
+			Common.testStepFailed("Error Occurred while Move to Element --> "+e.getMessage());
+			return false;
+		}
+	}
+
+	/***
+	 * Method to drag and drop from source element to destination element
+	 * @param       : weSource,weDestination
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+	public void dragAndDrop(WebElement weSource, WebElement weDestination)
+	{	
+		String strSource = weSource.toString();
+		String strDest = weDestination.toString();
+		if(!isElementPresent(weSource)){
+			Common.testStepFailed("Unable to perform DragAndDrop(Source element is not displayed), Expected Property of element is->"+strSource);
+			return;
+		}
+		if(!isElementPresent(weDestination)){
+			Common.testStepFailed("Unable to perform DragAndDrop(Destination element is not displayed), Expected Property of element is->"+strSource);
+			return;
+		}
+		try{	     
+			new Actions(browser).dragAndDrop(weSource, weDestination).perform();			
+			Common.testStepPassed("Draged Source element and droped on Destination Element Successfully");
+		}catch (Exception e){			
+			Common.testStepFailed("Exception Caught while performing DragAndDrop, Mesage is->"+e.getMessage());
+		}
+	}
+
+	//*****************************************************************************************************************//
+	//End Click 
+	//*****************************************************************************************************************//
 
 
 	/***
@@ -335,116 +794,23 @@ public abstract class Page {
 
 
 	/***
-	 * Method to check for an alert for 5 seconds
-	 * @param       : Element Name
+	 * Method to switch to default content
+	 * @param       : 
 	 * @return      : 
-	 * Modified By  :  
+	 * Modified By  : 
 	 ***/
-
-	public boolean isAlertPresent(){
+	public void UnSelectFrame()
+	{
 		try{
-			WebDriverWait wait = new WebDriverWait(browser, 5);
-			wait.until(ExpectedConditions.alertIsPresent());
-			return true;
-		}catch(Exception e){			
-			return false;
+			Common.writeToLogFile("Info", "Switching to default content frame ");
+			browser.switchTo().defaultContent();
+			Common.testStepPassed("Switched Back from frame to default page successfully");
+		}catch (Exception e){
+			Common.testStepFailed("Exception caught while Switching back to default page from Frame, Message is->"+e.getMessage());
 		}
 	}
 
 
-	/***
-	 * Method to wait for the any of 2 elements to be displayed
-	 * @param       : we1,we2
-	 * @return      : 
-	 * @author      : Prakash Shetty
-	 * Modified By  :  
-	 ***/
-
-
-	public boolean waitForAnyElement(WebElement we1,WebElement we2){
-		try{
-			for(int i=0;i<60;i++){
-				if(isElementPresent(we1)||isElementPresent(we2)){
-					break;
-				}else{
-					sleep(1000);
-				}
-			}
-			return true;
-		}catch(Exception Ex){
-			return false;
-		}
-	}
-	
-	
-	/**
-	 * method to make a thread sleep for customized time in milliseconds
-	 * @param milliseconds
-	 */
-	protected void sleep(int milliseconds){
-		 try {
-			Thread.sleep(milliseconds);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/***
-	 * Method to wait for the any of 2 elements to be displayed
-	 * @param       : By,By
-	 * @return      : 
-	 * @author      : Prakash Shetty
-	 * Modified By  :  
-	 ***/
-
-
-	public boolean waitForAnyElement(By we1,By we2){
-		try{
-			for(int i=0;i<80;i++){
-				if(isElementPresent(we1)||isElementPresent(we2)){
-					break;
-				}else{
-					sleep(1000);
-				}
-			}
-			return true;
-		}catch(Exception Ex){
-			return false;
-		}
-	}
-	
-	
-	/***
-	 * Method to hover over an element
-	 * @param       : weMainMenuElement,weSubMenuElement
-	 * @return      : 
-	 * @author      : Prakash Shetty
-	 * Modified By  :  
-	 ***/
-
-	public void clickOnSubMenu(WebElement weMain,WebElement weSub ){
-		String strElem=null;
-		try{
-			Actions action = new Actions(browser);
-			action.moveToElement(weMain).click().perform();
-		}catch(Exception Ex){
-			Common.testStepFailed("Unable to hover Over main menu Item");
-		}
-		try{
-		waitForElement(weSub);
-		strElem = weSub.getText();
-		weSub.click();
-		}catch(Exception ex){}
-		sleep(2000);
-		Set<String> handles = browser.getWindowHandles();
-		if(handles.size()>1){
-			Common.testStepPassed("Clicked on Link Life Insurance successfully");							
-		}else{
-			jsClick(weSub, strElem);
-		}
-		
-	}
-	
 	/***
 	 * Method to Select value from dropdown by visible text
 	 * @param       : we,strElemName,strVisibleText
@@ -452,27 +818,51 @@ public abstract class Page {
 	 * @author      : Prakash Shetty
 	 * Modified By  :  
 	 ***/
-	
+
 	public void selectByVisisbleText(WebElement we,String strElemName,String strVisibleText){
 		try{
-			Select sel = new Select( we);
-			sel.selectByVisibleText(strVisibleText);
-			Common.testStepPassed("selected value -"+strVisibleText +" from dropdown->"+strElemName);
+			if(waitForDropDown(we)){
+				Select sel = new Select(we);
+				sel.selectByVisibleText(strVisibleText);
+				Common.testStepPassed("Selected value -"+strVisibleText +" from dropdown->"+strElemName);
+			}
 		}catch(Exception Ex){
 			Common.testStepFailed("Unable to select value from the dropdown "+Ex.getMessage());
 		}
 	}
-	
-	
-	
+
+	/***
+	 * Method to Select value from dropdown by index
+	 * @param       : we,strElemName,index
+	 * @return      : 
+	 * Modified By  :  
+	 ***/
+
+	public void selectByIndex(WebElement we,String strElemName,int index){
+		try{
+			if(waitForDropDown(we)){
+				Select sel = new Select( we);
+				sel.selectByIndex(index);
+				Common.testStepPassed("Selected "+index +"option from dropdown->"+strElemName);
+			}
+		}catch(Exception Ex){
+			Common.testStepFailed("Unable to select value from the dropdown "+Ex.getMessage());
+		}
+	}
+
+
+
 	public void selectByVisisbleValue(WebElement we,String strElemName,String strVisibleValue){
 		try{
-			Select sel = new Select( we);
-			sel.selectByValue(strVisibleValue);
-			Common.testStepPassed("selected value -"+strVisibleValue +" from dropdown->"+strElemName);
+			if(waitForDropDown(we)){
+				Select sel = new Select( we);
+				sel.selectByValue(strVisibleValue);
+				Common.testStepPassed("Selected value -"+strVisibleValue +" from dropdown->"+strElemName);
+			}
 		}catch(Exception Ex){
 			Common.testStepFailed("Unable to select value from the dropdown "+Ex.getMessage());
 		}
 	}
+
 
 }

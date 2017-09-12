@@ -14,7 +14,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 public class LaunchScript extends Common {
 
 	
-	//public static void main(String[] args) {
+
 	@Test
 	public void Launch(){
 		try {			

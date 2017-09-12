@@ -54,7 +54,8 @@ public class XmlValidation {
 		//SOAPElement soapBodyElem = soapBody.addChildElement("getCMLMaintenanceData", "com");
 		SOAPElement soapBodyElem = soapBody.addChildElement("GetGeoIP", "web");
 		SOAPElement soapBodyElem2=soapBodyElem.addChildElement("IPAddress", "web");
-		soapBodyElem2.addTextNode("192.164.94.65");
+		//soapBodyElem2.addTextNode("192.164.94.65");		
+		soapBodyElem2.addTextNode(Common.retrieve("IPAddress"));
 		/*SOAPElement soapBodyElem1 = soapBodyElem.addChildElement("ToCurrency", "web");
             soapBodyElem1.addTextNode("AUD");*/
 

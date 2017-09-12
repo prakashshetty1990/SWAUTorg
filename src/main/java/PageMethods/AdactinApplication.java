@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
@@ -89,8 +90,10 @@ public class AdactinApplication {
 		if(browserName.equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver", 
 					getRelativePath()+"/ext/BrowserSpecificDrivers/chromedriver.exe");
-									
-					driver=new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("window-size=1400,800");
+			options.addArguments("headless");				
+					driver=new ChromeDriver(options);
 		}
 		if(browserName.equalsIgnoreCase("iexplore") || browserName.equalsIgnoreCase("ie")){
 			System.setProperty("webdriver.ie.driver",
@@ -146,8 +149,6 @@ public class AdactinApplication {
 					p.getInputStream()));
 			String line;
 			while ((line = reader.readLine()) != null) {
-
-				//System.out.println(line);
 				if (line.contains(serviceName)) {
 					return true;
 				}

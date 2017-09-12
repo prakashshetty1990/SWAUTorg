@@ -12,6 +12,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Properties;
 import java.util.zip.ZipEntry;
@@ -196,12 +198,45 @@ public class Common
 			}
 			zout.close();
 
+			File srcDir = new File(GenericKeywords.outputDirectory);
+			File destDir = new File(strPath);
+			FileUtils.copyDirectory(srcDir, destDir);
 		} catch (Exception e) {
 			System.out.println("Exception caught");
 		}
 	}
   
 
+  public void copy(File sourceLocation, File targetLocation) throws IOException {
+	    if (sourceLocation.isDirectory()) {
+	        copyDirectory(sourceLocation, targetLocation);
+	    } else {
+	        copyFile(sourceLocation, targetLocation);
+	    }
+	}
+
+	private void copyDirectory(File source, File target) throws IOException {
+	    if (!target.exists()) {
+	        target.mkdir();
+	    }
+
+	    for (String f : source.list()) {
+	        copy(new File(source, f), new File(target, f));
+	    }
+	}
+
+	private void copyFile(File source, File target) throws IOException {        
+	    try (
+	            InputStream in = new FileInputStream(source);
+	            OutputStream out = new FileOutputStream(target)
+	    ) {
+	        byte[] buf = new byte[1024];
+	        int length;
+	        while ((length = in.read(buf)) > 0) {
+	            out.write(buf, 0, length);
+	        }
+	    }
+	}
 
 
   public static void testReporter(String color, String report)
@@ -281,27 +316,19 @@ public class Common
   
 
 
-  public static void captureScreenShot(String filename)
-  {
+  public static void captureScreenShot(String filename){
     File scrFile = null;
     String scrPath = GenericKeywords.outputDirectory + "\\Screenshots";
     File file = new File(scrPath);
     file.mkdir();
-
-    try
-    {
+    try{
       //scrFile = (File)((RemoteWebDriver) GenericKeywords.driver).getScreenshotAs(OutputType.FILE);
     	scrFile = (File) ((TakesScreenshot) GenericKeywords.driver).getScreenshotAs(OutputType.FILE);
       FileUtils.copyFile(scrFile, new File(scrPath + "\\" + filename + ".png"));
-    }
-    catch (Exception e)
-    {
+    }catch (Exception e){
       testReporter("Red", e.toString()); return;
 
-    }
-    finally
-    {
-
+    }finally{
       if (scrFile == null) {
         System.out.println("This WebDriver does not support screenshots");
         return;
@@ -311,43 +338,33 @@ public class Common
   
 
 
-  public static void testStepFailed(String errMessage)
-  {
+  public static void testStepFailed(String errMessage){
 	  GenericKeywords.testFailure = true;
 	  GenericKeywords.failureNo += 1;
 
 	  writeToLogFile("Error", errMessage);
 	  testReporter("Red", errMessage);
-	  if (!GenericKeywords.windowreadyStateStatus)
-	  {
+	  if (!GenericKeywords.windowreadyStateStatus){
 		  screenShot("TestFailure" + GenericKeywords.failureNo);
 		  GenericKeywords.windowreadyStateStatus = true;
-	  }
-	  else
-	  {
+	  }else{
 		  captureScreenShot("TestFailure" + GenericKeywords.failureNo);
 	  }	  
 	  String pathAndFile = GenericKeywords.outputDirectory + "\\Screenshots\\TestFailure" + GenericKeywords.failureNo+ ".png";
 	  GenericKeywords.child.log(LogStatus.FAIL, "Check ScreenShot Below: " + GenericKeywords.child.addScreenCapture(pathAndFile));	  
-	  if (getConfigProperty("ExecuteRemainingStepsOnFailure(Yes/No)").toUpperCase().contains("YES"))
-	  {
+	  if (getConfigProperty("ExecuteRemainingStepsOnFailure(Yes/No)").toUpperCase().contains("YES")){
 
 		  GenericKeywords.testCaseExecutionStatus = true;
 		  GenericKeywords.elementLoadWaitTime = Integer.parseInt(getConfigProperty("OverideTimeoutOnFailure"));
 		  GenericKeywords.textLoadWaitTime = Integer.parseInt(getConfigProperty("OverideTimeoutOnFailure"));
 		  GenericKeywords.pageLoadWaitTime = Integer.parseInt(getConfigProperty("OverideTimeoutOnFailure"));
 		  GenericKeywords.implicitlyWaitTime = Integer.parseInt(getConfigProperty("OverideTimeoutOnFailure"));
-	  }
-	  else if (getConfigProperty("ExecuteRemainingStepsOnFailure(Yes/No)").toUpperCase().contains("NO"))
-	  {
+	  }else if (getConfigProperty("ExecuteRemainingStepsOnFailure(Yes/No)").toUpperCase().contains("NO")){
 		  testFailed();
-	  }
-	  else
-	  {
+	  }else{
 		  testReporter("Red", "Invalid option 'ExecuteRemainingStepsOnFailure(Yes/No)--'" + getConfigProperty("ExecuteRemainingStepsOnFailure(Yes/No)"));
 		  testFailed();
-	  }	  
-	 // Assert.fail("Error Descripton: " + errMessage); 
+	  }	   
   }
 
   public static void testStepPassed(String errMessage)
@@ -447,7 +464,7 @@ public class Common
   {
     GenericKeywords.screenshotNo += 1;        
     captureScreenShot("Screenshot" + GenericKeywords.screenshotNo);
-    embedScreenshot("orange", GenericKeywords.outputDirectory + "\\Screenshots" + "\\Screenshot" + GenericKeywords.screenshotNo);
+    embedScreenshot("orange", "./Screenshots" + "/Screenshot" + GenericKeywords.screenshotNo);
   }
   
 
