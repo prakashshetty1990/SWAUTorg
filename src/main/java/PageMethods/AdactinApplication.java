@@ -90,10 +90,10 @@ public class AdactinApplication {
 		if(browserName.equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver", 
 					getRelativePath()+"/ext/BrowserSpecificDrivers/chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
+			/*ChromeOptions options = new ChromeOptions();
 			options.addArguments("window-size=1400,800");
-			options.addArguments("headless");				
-					driver=new ChromeDriver(options);
+			options.addArguments("headless");*/				
+					driver=new ChromeDriver();
 		}
 		if(browserName.equalsIgnoreCase("iexplore") || browserName.equalsIgnoreCase("ie")){
 			System.setProperty("webdriver.ie.driver",
