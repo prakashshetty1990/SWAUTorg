@@ -1,0 +1,8 @@
+* updated framework to update the status of each testcase in 
+testLink
+
+* Updated the Framework to attach the report file to TestSuite
+
+* Updated the framework to execute the scripts on headless browser
+
+* Updated the framework to take the browser and url parameter from jenkins

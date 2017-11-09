@@ -27,12 +27,24 @@ public class AdactinApplication {
 	private Page page;
 
 	public AdactinApplication() {	
-		String strbrowser = Common.getConfigProperty("Browser");
+		String strbrowser = "";		
+		String strJenkinsBrowser = System.getProperty("browser");
+		if(strJenkinsBrowser != null) {
+			strbrowser = strJenkinsBrowser;
+		}else{
+			strbrowser = Common.getConfigProperty("Browser");
+		}
 		browser=getDriver(strbrowser);
 		this.browser = browser;
-		this.url = Common.getConfigProperty("url");
+		String strJenkinsAppUrl = System.getProperty("url");
+		if(strJenkinsAppUrl != null) {
+			this.url = strJenkinsAppUrl;
+		}else{
+			this.url = Common.getConfigProperty("url");
+		}
 		GenericKeywords.driver = browser;
-
+		GenericKeywords.extent.addSystemInfo("Browser", Common.getConfigProperty("Browser"));
+		GenericKeywords.extent.addSystemInfo("URL", Common.getConfigProperty("url"));
 	}
 
 	//==================='

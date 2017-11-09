@@ -33,9 +33,7 @@ public class TestCases extends Common {
 
 	@BeforeClass
 	public void start(){	
-		GenericKeywords.extent.loadConfig(new File("./Config/extent-config.xml"));
-		GenericKeywords.extent.addSystemInfo("Browser", Common.getConfigProperty("Browser"));
-		GenericKeywords.extent.addSystemInfo("URL", Common.getConfigProperty("url"));
+		GenericKeywords.extent.loadConfig(new File("./Config/extent-config.xml"));		
 	}
 
 
