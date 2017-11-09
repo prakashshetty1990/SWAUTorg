@@ -1,0 +1,323 @@
+ INFO | 2017-11-09 17:29:15,373 | Common.java | 79 | null:  Startup activites...
+ INFO | 2017-11-09 17:29:15,376 | Common.java | 79 | null:  Test Output Directory creation successful :C:\FinalDemoWorkspace\SWAUT\TestResults\2017_11_09_05_29_15_PM
+ INFO | 2017-11-09 17:29:15,376 | Common.java | 79 | null:  Log File creation successful : LogFile.log
+ INFO | 2017-11-09 17:29:15,616 | Common.java | 79 | null:  Getting value of Tc_Settings_Excelpath from Test Configuration file : ./src/test/resources/TestCaseSettings.xls
+ INFO | 2017-11-09 17:29:15,722 | Common.java | 79 | null:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:29:15,870 | Common.java | 79 | null:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:15,870 | Common.java | 79 | null:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:29:15,871 | Common.java | 79 | TC_001:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:29:15,871 | Common.java | 79 | TC_001:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:29:15,872 | Common.java | 79 | TC_001:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:29:15,872 | Common.java | 79 | TC_001:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:29:15,872 | Common.java | 79 | TC_001:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:29:15,874 | Common.java | 79 | TC_001:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:29:15,874 | Common.java | 79 | TC_001:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:29:15,874 | Common.java | 79 | TC_001:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:29:15,875 | Common.java | 79 | TC_001:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:29:15,876 | Common.java | 79 | TC_001:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:29:15,876 | Common.java | 79 | TC_001:  Element time out set
+ INFO | 2017-11-09 17:29:15,877 | Common.java | 79 | TC_001:  ##### Start of Test Case : Login to Adactin Application #####
+ INFO | 2017-11-09 17:29:15,877 | Common.java | 79 | TC_001:  Test Case Name: TC_001
+ INFO | 2017-11-09 17:29:15,877 | Common.java | 79 | TC_001:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:29:15,933 | Common.java | 79 | TC_001:  Test Data Set Name: TC_001
+ INFO | 2017-11-09 17:29:15,933 | Common.java | 79 | TC_001:  Execution Flag: Execute
+ INFO | 2017-11-09 17:29:15,933 | Common.java | 79 | TC_001:  Test Data Set Name: TC_001_01
+ INFO | 2017-11-09 17:29:15,933 | Common.java | 79 | TC_001:  Execution Flag: YES
+ INFO | 2017-11-09 17:29:15,933 | Common.java | 79 | TC_001:  Test Data Set Name: TC_001_02
+ INFO | 2017-11-09 17:29:15,934 | Common.java | 79 | TC_001:  Execution Flag: YES
+ INFO | 2017-11-09 17:29:15,934 | Common.java | 79 | TC_001:  Test Data Set Name: 
+ INFO | 2017-11-09 17:29:15,934 | Common.java | 79 | TC_001:  Execution Flag: 
+ INFO | 2017-11-09 17:29:15,938 | Common.java | 79 | TC_001:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:18,425 | Common.java | 79 | TC_001:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:29:20,768 | Common.java | 79 | TC_001:  Entered text -> prakashs
+ INFO | 2017-11-09 17:29:20,768 | Common.java | 75 | TC_001:  Report step generation success : Entered text -> prakashs
+ INFO | 2017-11-09 17:29:20,768 | Common.java | 79 | TC_001:  Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:20,768 | Common.java | 75 | TC_001:  Report step generation success : Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:21,007 | Common.java | 79 | TC_001:  Entered text -> prakash
+ INFO | 2017-11-09 17:29:21,007 | Common.java | 75 | TC_001:  Report step generation success : Entered text -> prakash
+ INFO | 2017-11-09 17:29:21,007 | Common.java | 79 | TC_001:  Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:21,007 | Common.java | 75 | TC_001:  Report step generation success : Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:21,008 | Common.java | 79 | TC_001:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:25,989 | Common.java | 79 | TC_001:  Clicked on WebElement-Login
+ INFO | 2017-11-09 17:29:25,989 | Common.java | 75 | TC_001:  Report step generation success : Clicked on WebElement-Login
+ INFO | 2017-11-09 17:29:26,085 | Common.java | 79 | TC_001:  Successfully logged in to the application
+ INFO | 2017-11-09 17:29:26,086 | Common.java | 75 | TC_001:  Report step generation success : Successfully logged in to the application
+ INFO | 2017-11-09 17:29:26,086 | Common.java | 79 | TC_001:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:28,864 | Common.java | 79 | TC_001:  Clicked on WebElement-Logout Link
+ INFO | 2017-11-09 17:29:28,864 | Common.java | 75 | TC_001:  Report step generation success : Clicked on WebElement-Logout Link
+ INFO | 2017-11-09 17:29:29,205 | Common.java | 79 | TC_001:  Clicked on WebElement-Login Again Link
+ INFO | 2017-11-09 17:29:29,205 | Common.java | 75 | TC_001:  Report step generation success : Clicked on WebElement-Login Again Link
+ INFO | 2017-11-09 17:29:29,437 | Common.java | 79 | TC_001:  Entered text -> prakashs
+ INFO | 2017-11-09 17:29:29,437 | Common.java | 75 | TC_001:  Report step generation success : Entered text -> prakashs
+ INFO | 2017-11-09 17:29:29,437 | Common.java | 79 | TC_001:  Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:29,437 | Common.java | 75 | TC_001:  Report step generation success : Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:29,667 | Common.java | 79 | TC_001:  Entered text -> wrongPassword
+ INFO | 2017-11-09 17:29:29,667 | Common.java | 75 | TC_001:  Report step generation success : Entered text -> wrongPassword
+ INFO | 2017-11-09 17:29:29,667 | Common.java | 79 | TC_001:  Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:29,667 | Common.java | 75 | TC_001:  Report step generation success : Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:29,668 | Common.java | 79 | TC_001:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:33,274 | Common.java | 79 | TC_001:  Clicked on WebElement-Login
+ INFO | 2017-11-09 17:29:33,274 | Common.java | 75 | TC_001:  Report step generation success : Clicked on WebElement-Login
+ERROR | 2017-11-09 17:29:40,420 | Common.java | 87 | TC_001:  Unable to login to application, Check Username and password
+ERROR | 2017-11-09 17:29:40,420 | Common.java | 87 | TC_001:  Report step generation success : Unable to login to application, Check Username and password
+ INFO | 2017-11-09 17:29:40,420 | Common.java | 79 | TC_001:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:43,865 | Common.java | 79 | TC_001:  Getting value of ExecuteRemainingStepsOnFailure(Yes/No) from Test Configuration file : Yes
+ INFO | 2017-11-09 17:29:43,865 | Common.java | 79 | TC_001:  Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2017-11-09 17:29:43,866 | Common.java | 79 | TC_001:  Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2017-11-09 17:29:43,866 | Common.java | 79 | TC_001:  Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2017-11-09 17:29:43,866 | Common.java | 79 | TC_001:  Getting value of OverideTimeoutOnFailure from Test Configuration file : 5
+ INFO | 2017-11-09 17:29:44,698 | Common.java | 79 | TC_001:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:29:46,053 | Common.java | 79 | TC_002:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:29:46,054 | Common.java | 79 | TC_002:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:29:46,055 | Common.java | 79 | TC_002:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:29:46,056 | Common.java | 79 | TC_002:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:29:46,056 | Common.java | 79 | TC_002:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:29:46,058 | Common.java | 79 | TC_002:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:29:46,059 | Common.java | 79 | TC_002:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:29:46,059 | Common.java | 79 | TC_002:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:29:46,060 | Common.java | 79 | TC_002:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:29:46,061 | Common.java | 79 | TC_002:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:29:46,061 | Common.java | 79 | TC_002:  Element time out set
+ INFO | 2017-11-09 17:29:46,062 | Common.java | 79 | TC_002:  ##### Start of Test Case : Search a hotel #####
+ INFO | 2017-11-09 17:29:46,062 | Common.java | 79 | TC_002:  Test Case Name: TC_002
+ INFO | 2017-11-09 17:29:46,063 | Common.java | 79 | TC_002:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:29:46,162 | Common.java | 79 | TC_002:  Test Data Set Name: TC_002
+ INFO | 2017-11-09 17:29:46,162 | Common.java | 79 | TC_002:  Execution Flag: Execute
+ INFO | 2017-11-09 17:29:46,162 | Common.java | 79 | TC_002:  Test Data Set Name: TC_002_01
+ INFO | 2017-11-09 17:29:46,162 | Common.java | 79 | TC_002:  Execution Flag: YES
+ INFO | 2017-11-09 17:29:46,162 | Common.java | 79 | TC_002:  Test Data Set Name: 
+ INFO | 2017-11-09 17:29:46,163 | Common.java | 79 | TC_002:  Execution Flag: 
+ INFO | 2017-11-09 17:29:46,163 | Common.java | 79 | TC_002:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:48,063 | Common.java | 79 | TC_002:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:29:50,362 | Common.java | 79 | TC_002:  Entered text -> prakashs
+ INFO | 2017-11-09 17:29:50,362 | Common.java | 75 | TC_002:  Report step generation success : Entered text -> prakashs
+ INFO | 2017-11-09 17:29:50,363 | Common.java | 79 | TC_002:  Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:50,363 | Common.java | 75 | TC_002:  Report step generation success : Entered Username ->prakashs
+ INFO | 2017-11-09 17:29:50,577 | Common.java | 79 | TC_002:  Entered text -> prakash
+ INFO | 2017-11-09 17:29:50,577 | Common.java | 75 | TC_002:  Report step generation success : Entered text -> prakash
+ INFO | 2017-11-09 17:29:50,577 | Common.java | 79 | TC_002:  Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:50,577 | Common.java | 75 | TC_002:  Report step generation success : Entered Password ->prakashs
+ INFO | 2017-11-09 17:29:50,578 | Common.java | 79 | TC_002:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:29:55,122 | Common.java | 79 | TC_002:  Clicked on WebElement-Login
+ INFO | 2017-11-09 17:29:55,123 | Common.java | 75 | TC_002:  Report step generation success : Clicked on WebElement-Login
+ INFO | 2017-11-09 17:29:55,406 | Common.java | 79 | TC_002:  Selected value -Sydney from dropdown->Location
+ INFO | 2017-11-09 17:29:55,406 | Common.java | 75 | TC_002:  Report step generation success : Selected value -Sydney from dropdown->Location
+ INFO | 2017-11-09 17:29:55,650 | Common.java | 79 | TC_002:  Selected value -Hotel Sunshine from dropdown->Hotel
+ INFO | 2017-11-09 17:29:55,651 | Common.java | 75 | TC_002:  Report step generation success : Selected value -Hotel Sunshine from dropdown->Hotel
+ INFO | 2017-11-09 17:29:55,945 | Common.java | 79 | TC_002:  Selected value -Deluxe from dropdown->RoomType
+ INFO | 2017-11-09 17:29:55,945 | Common.java | 75 | TC_002:  Report step generation success : Selected value -Deluxe from dropdown->RoomType
+ INFO | 2017-11-09 17:29:56,200 | Common.java | 79 | TC_002:  Selected value -2 - Two from dropdown->NumRooms
+ INFO | 2017-11-09 17:29:56,200 | Common.java | 75 | TC_002:  Report step generation success : Selected value -2 - Two from dropdown->NumRooms
+ INFO | 2017-11-09 17:29:56,421 | Common.java | 79 | TC_002:  Entered text -> 09/11/2017
+ INFO | 2017-11-09 17:29:56,421 | Common.java | 75 | TC_002:  Report step generation success : Entered text -> 09/11/2017
+ INFO | 2017-11-09 17:29:56,421 | Common.java | 79 | TC_002:  Selected Check In Date as ->09/11/2017
+ INFO | 2017-11-09 17:29:56,421 | Common.java | 75 | TC_002:  Report step generation success : Selected Check In Date as ->09/11/2017
+ INFO | 2017-11-09 17:29:56,652 | Common.java | 79 | TC_002:  Entered text -> 14/11/2017
+ INFO | 2017-11-09 17:29:56,652 | Common.java | 75 | TC_002:  Report step generation success : Entered text -> 14/11/2017
+ INFO | 2017-11-09 17:29:56,652 | Common.java | 79 | TC_002:  Selected Check Out Date as ->14/11/2017
+ INFO | 2017-11-09 17:29:56,652 | Common.java | 75 | TC_002:  Report step generation success : Selected Check Out Date as ->14/11/2017
+ INFO | 2017-11-09 17:29:56,902 | Common.java | 79 | TC_002:  Selected value -4 - Four from dropdown->Adults
+ INFO | 2017-11-09 17:29:56,902 | Common.java | 75 | TC_002:  Report step generation success : Selected value -4 - Four from dropdown->Adults
+ INFO | 2017-11-09 17:29:57,162 | Common.java | 79 | TC_002:  Selected value -4 - Four from dropdown->Children
+ INFO | 2017-11-09 17:29:57,163 | Common.java | 75 | TC_002:  Report step generation success : Selected value -4 - Four from dropdown->Children
+ INFO | 2017-11-09 17:29:57,871 | Common.java | 79 | TC_002:  Clicked on WebElement-Search
+ INFO | 2017-11-09 17:29:57,872 | Common.java | 75 | TC_002:  Report step generation success : Clicked on WebElement-Search
+ INFO | 2017-11-09 17:29:57,872 | Common.java | 79 | TC_002:  Clicked on Seach button
+ INFO | 2017-11-09 17:29:57,872 | Common.java | 75 | TC_002:  Report step generation success : Clicked on Seach button
+ INFO | 2017-11-09 17:29:57,872 | Common.java | 79 | TC_002:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:00,622 | Common.java | 79 | TC_002:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:30:01,766 | Common.java | 79 | TC_003:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:01,766 | Common.java | 79 | TC_003:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:30:01,766 | Common.java | 79 | TC_003:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:30:01,766 | Common.java | 79 | TC_003:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:01,767 | Common.java | 79 | TC_003:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:30:01,767 | Common.java | 79 | TC_003:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:30:01,767 | Common.java | 79 | TC_003:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:30:01,767 | Common.java | 79 | TC_003:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  Element time out set
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  ##### Start of Test Case : Book a hotel #####
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  Test Case Name: TC_003
+ INFO | 2017-11-09 17:30:01,768 | Common.java | 79 | TC_003:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:30:01,841 | Common.java | 79 | TC_003:  Test Data Set Name: TC_003
+ INFO | 2017-11-09 17:30:01,841 | Common.java | 79 | TC_003:  Execution Flag: Execute
+ INFO | 2017-11-09 17:30:01,841 | Common.java | 79 | TC_003:  Test Data Set Name: TC_003_01
+ INFO | 2017-11-09 17:30:01,841 | Common.java | 79 | TC_003:  Execution Flag: YES
+ INFO | 2017-11-09 17:30:01,841 | Common.java | 79 | TC_003:  Test Data Set Name: 
+ INFO | 2017-11-09 17:30:01,842 | Common.java | 79 | TC_003:  Execution Flag: 
+ INFO | 2017-11-09 17:30:01,842 | Common.java | 79 | TC_003:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:03,743 | Common.java | 79 | TC_003:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:30:06,257 | Common.java | 79 | TC_003:  Entered text -> prakashs
+ INFO | 2017-11-09 17:30:06,257 | Common.java | 75 | TC_003:  Report step generation success : Entered text -> prakashs
+ INFO | 2017-11-09 17:30:06,257 | Common.java | 79 | TC_003:  Entered Username ->prakashs
+ INFO | 2017-11-09 17:30:06,257 | Common.java | 75 | TC_003:  Report step generation success : Entered Username ->prakashs
+ INFO | 2017-11-09 17:30:06,477 | Common.java | 79 | TC_003:  Entered text -> prakash
+ INFO | 2017-11-09 17:30:06,478 | Common.java | 75 | TC_003:  Report step generation success : Entered text -> prakash
+ INFO | 2017-11-09 17:30:06,478 | Common.java | 79 | TC_003:  Entered Password ->prakashs
+ INFO | 2017-11-09 17:30:06,478 | Common.java | 75 | TC_003:  Report step generation success : Entered Password ->prakashs
+ INFO | 2017-11-09 17:30:06,478 | Common.java | 79 | TC_003:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:10,954 | Common.java | 79 | TC_003:  Clicked on WebElement-Login
+ INFO | 2017-11-09 17:30:10,955 | Common.java | 75 | TC_003:  Report step generation success : Clicked on WebElement-Login
+ INFO | 2017-11-09 17:30:11,222 | Common.java | 79 | TC_003:  Selected value -Sydney from dropdown->Location
+ INFO | 2017-11-09 17:30:11,222 | Common.java | 75 | TC_003:  Report step generation success : Selected value -Sydney from dropdown->Location
+ INFO | 2017-11-09 17:30:11,466 | Common.java | 79 | TC_003:  Selected value -Hotel Sunshine from dropdown->Hotel
+ INFO | 2017-11-09 17:30:11,467 | Common.java | 75 | TC_003:  Report step generation success : Selected value -Hotel Sunshine from dropdown->Hotel
+ INFO | 2017-11-09 17:30:11,712 | Common.java | 79 | TC_003:  Selected value -Deluxe from dropdown->RoomType
+ INFO | 2017-11-09 17:30:11,712 | Common.java | 75 | TC_003:  Report step generation success : Selected value -Deluxe from dropdown->RoomType
+ INFO | 2017-11-09 17:30:11,969 | Common.java | 79 | TC_003:  Selected value -2 - Two from dropdown->NumRooms
+ INFO | 2017-11-09 17:30:11,969 | Common.java | 75 | TC_003:  Report step generation success : Selected value -2 - Two from dropdown->NumRooms
+ INFO | 2017-11-09 17:30:12,181 | Common.java | 79 | TC_003:  Entered text -> 09/11/2017
+ INFO | 2017-11-09 17:30:12,181 | Common.java | 75 | TC_003:  Report step generation success : Entered text -> 09/11/2017
+ INFO | 2017-11-09 17:30:12,181 | Common.java | 79 | TC_003:  Selected Check In Date as ->09/11/2017
+ INFO | 2017-11-09 17:30:12,181 | Common.java | 75 | TC_003:  Report step generation success : Selected Check In Date as ->09/11/2017
+ INFO | 2017-11-09 17:30:12,387 | Common.java | 79 | TC_003:  Entered text -> 14/11/2017
+ INFO | 2017-11-09 17:30:12,387 | Common.java | 75 | TC_003:  Report step generation success : Entered text -> 14/11/2017
+ INFO | 2017-11-09 17:30:12,388 | Common.java | 79 | TC_003:  Selected Check Out Date as ->14/11/2017
+ INFO | 2017-11-09 17:30:12,388 | Common.java | 75 | TC_003:  Report step generation success : Selected Check Out Date as ->14/11/2017
+ INFO | 2017-11-09 17:30:12,645 | Common.java | 79 | TC_003:  Selected value -4 - Four from dropdown->Adults
+ INFO | 2017-11-09 17:30:12,645 | Common.java | 75 | TC_003:  Report step generation success : Selected value -4 - Four from dropdown->Adults
+ INFO | 2017-11-09 17:30:12,895 | Common.java | 79 | TC_003:  Selected value -4 - Four from dropdown->Children
+ INFO | 2017-11-09 17:30:12,896 | Common.java | 75 | TC_003:  Report step generation success : Selected value -4 - Four from dropdown->Children
+ INFO | 2017-11-09 17:30:13,707 | Common.java | 79 | TC_003:  Clicked on WebElement-Search
+ INFO | 2017-11-09 17:30:13,707 | Common.java | 75 | TC_003:  Report step generation success : Clicked on WebElement-Search
+ INFO | 2017-11-09 17:30:13,707 | Common.java | 79 | TC_003:  Clicked on Seach button
+ INFO | 2017-11-09 17:30:13,707 | Common.java | 75 | TC_003:  Report step generation success : Clicked on Seach button
+ INFO | 2017-11-09 17:30:13,708 | Common.java | 79 | TC_003:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:16,018 | Common.java | 79 | TC_003:  Clicked on WebElement-Selected
+ INFO | 2017-11-09 17:30:16,018 | Common.java | 75 | TC_003:  Report step generation success : Clicked on WebElement-Selected
+ INFO | 2017-11-09 17:30:16,018 | Common.java | 79 | TC_003:  Selected radio button
+ INFO | 2017-11-09 17:30:16,019 | Common.java | 75 | TC_003:  Report step generation success : Selected radio button
+ INFO | 2017-11-09 17:30:16,552 | Common.java | 79 | TC_003:  Clicked on WebElement-Continue
+ INFO | 2017-11-09 17:30:16,553 | Common.java | 75 | TC_003:  Report step generation success : Clicked on WebElement-Continue
+ INFO | 2017-11-09 17:30:16,553 | Common.java | 79 | TC_003:  Clicked on Continue Button
+ INFO | 2017-11-09 17:30:16,553 | Common.java | 75 | TC_003:  Report step generation success : Clicked on Continue Button
+ INFO | 2017-11-09 17:30:17,128 | Common.java | 79 | TC_003:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:30:18,348 | Common.java | 79 | TC_004:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:18,348 | Common.java | 79 | TC_004:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:30:18,349 | Common.java | 79 | TC_004:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:30:18,349 | Common.java | 79 | TC_004:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:18,350 | Common.java | 79 | TC_004:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:30:18,350 | Common.java | 79 | TC_004:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:30:18,351 | Common.java | 79 | TC_004:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:30:18,351 | Common.java | 79 | TC_004:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:30:18,352 | Common.java | 79 | TC_004:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:30:18,352 | Common.java | 79 | TC_004:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:30:18,352 | Common.java | 79 | TC_004:  Element time out set
+ INFO | 2017-11-09 17:30:18,353 | Common.java | 79 | TC_004:  ##### Start of Test Case : Forget Password functionality #####
+ INFO | 2017-11-09 17:30:18,353 | Common.java | 79 | TC_004:  Test Case Name: TC_004
+ INFO | 2017-11-09 17:30:18,353 | Common.java | 79 | TC_004:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Test Data Set Name: TC_004
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Execution Flag: Execute
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Test Data Set Name: TC_004_01
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Execution Flag: YES
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Test Data Set Name: 
+ INFO | 2017-11-09 17:30:18,431 | Common.java | 79 | TC_004:  Execution Flag: 
+ INFO | 2017-11-09 17:30:18,432 | Common.java | 79 | TC_004:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:20,333 | Common.java | 79 | TC_004:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:30:23,124 | Common.java | 79 | TC_004:  Clicked on WebElement-ForgetPassword
+ INFO | 2017-11-09 17:30:23,124 | Common.java | 75 | TC_004:  Report step generation success : Clicked on WebElement-ForgetPassword
+ INFO | 2017-11-09 17:30:23,366 | Common.java | 79 | TC_004:  Entered text -> g.nandini438@gmail.com
+ INFO | 2017-11-09 17:30:23,366 | Common.java | 75 | TC_004:  Report step generation success : Entered text -> g.nandini438@gmail.com
+ INFO | 2017-11-09 17:30:24,241 | Common.java | 79 | TC_004:  Clicked on WebElement-Submit
+ INFO | 2017-11-09 17:30:24,241 | Common.java | 75 | TC_004:  Report step generation success : Clicked on WebElement-Submit
+ INFO | 2017-11-09 17:30:24,843 | Common.java | 79 | TC_004:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:30:26,090 | Common.java | 79 | TC_005:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:26,091 | Common.java | 79 | TC_005:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:30:26,092 | Common.java | 79 | TC_005:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:30:26,092 | Common.java | 79 | TC_005:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:26,093 | Common.java | 79 | TC_005:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:30:26,093 | Common.java | 79 | TC_005:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:30:26,094 | Common.java | 79 | TC_005:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:30:26,095 | Common.java | 79 | TC_005:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:30:26,095 | Common.java | 79 | TC_005:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:30:26,096 | Common.java | 79 | TC_005:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:30:26,096 | Common.java | 79 | TC_005:  Element time out set
+ INFO | 2017-11-09 17:30:26,096 | Common.java | 79 | TC_005:  ##### Start of Test Case : New User Register functionality #####
+ INFO | 2017-11-09 17:30:26,097 | Common.java | 79 | TC_005:  Test Case Name: TC_005
+ INFO | 2017-11-09 17:30:26,097 | Common.java | 79 | TC_005:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Test Data Set Name: TC_005
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Execution Flag: Execute
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Test Data Set Name: TC_005_01
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Execution Flag: YES
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Test Data Set Name: 
+ INFO | 2017-11-09 17:30:26,170 | Common.java | 79 | TC_005:  Execution Flag: 
+ INFO | 2017-11-09 17:30:26,171 | Common.java | 79 | TC_005:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:28,080 | Common.java | 79 | TC_005:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:30:31,458 | Common.java | 79 | TC_005:  Clicked on WebElement-New Registration
+ INFO | 2017-11-09 17:30:31,459 | Common.java | 75 | TC_005:  Report step generation success : Clicked on WebElement-New Registration
+ INFO | 2017-11-09 17:30:31,459 | Common.java | 79 | TC_005:  Clicked on link->New Registration
+ INFO | 2017-11-09 17:30:31,459 | Common.java | 75 | TC_005:  Report step generation success : Clicked on link->New Registration
+ INFO | 2017-11-09 17:30:31,684 | Common.java | 79 | TC_005:  Entered text -> Pramela123
+ INFO | 2017-11-09 17:30:31,684 | Common.java | 75 | TC_005:  Report step generation success : Entered text -> Pramela123
+ INFO | 2017-11-09 17:30:31,684 | Common.java | 79 | TC_005:  Entered UserName->Pramela123
+ INFO | 2017-11-09 17:30:31,684 | Common.java | 75 | TC_005:  Report step generation success : Entered UserName->Pramela123
+ INFO | 2017-11-09 17:30:31,903 | Common.java | 79 | TC_005:  Entered text -> Reset123
+ INFO | 2017-11-09 17:30:31,903 | Common.java | 75 | TC_005:  Report step generation success : Entered text -> Reset123
+ INFO | 2017-11-09 17:30:31,904 | Common.java | 79 | TC_005:  Entered Password->Reset123
+ INFO | 2017-11-09 17:30:31,904 | Common.java | 75 | TC_005:  Report step generation success : Entered Password->Reset123
+ INFO | 2017-11-09 17:30:32,146 | Common.java | 79 | TC_005:  Entered text -> Reset123
+ INFO | 2017-11-09 17:30:32,146 | Common.java | 75 | TC_005:  Report step generation success : Entered text -> Reset123
+ INFO | 2017-11-09 17:30:32,146 | Common.java | 79 | TC_005:  Re Entered Password->Reset123
+ INFO | 2017-11-09 17:30:32,147 | Common.java | 75 | TC_005:  Report step generation success : Re Entered Password->Reset123
+ INFO | 2017-11-09 17:30:32,357 | Common.java | 79 | TC_005:  Entered text -> G
+ INFO | 2017-11-09 17:30:32,357 | Common.java | 75 | TC_005:  Report step generation success : Entered text -> G
+ INFO | 2017-11-09 17:30:32,357 | Common.java | 79 | TC_005:  Entered Full Name->G
+ INFO | 2017-11-09 17:30:32,357 | Common.java | 75 | TC_005:  Report step generation success : Entered Full Name->G
+ INFO | 2017-11-09 17:30:32,594 | Common.java | 79 | TC_005:  Entered text -> nandinig@suntechnologies.com
+ INFO | 2017-11-09 17:30:32,594 | Common.java | 75 | TC_005:  Report step generation success : Entered text -> nandinig@suntechnologies.com
+ INFO | 2017-11-09 17:30:32,595 | Common.java | 79 | TC_005:  Entered Email Address->nandinig@suntechnologies.com
+ INFO | 2017-11-09 17:30:32,595 | Common.java | 75 | TC_005:  Report step generation success : Entered Email Address->nandinig@suntechnologies.com
+ INFO | 2017-11-09 17:30:32,783 | Common.java | 79 | TC_005:  Clicked on WebElement-Agree
+ INFO | 2017-11-09 17:30:32,783 | Common.java | 75 | TC_005:  Report step generation success : Clicked on WebElement-Agree
+ INFO | 2017-11-09 17:30:32,784 | Common.java | 79 | TC_005:  Clicked on Agree checkbox
+ INFO | 2017-11-09 17:30:32,784 | Common.java | 75 | TC_005:  Report step generation success : Clicked on Agree checkbox
+ INFO | 2017-11-09 17:30:32,784 | Common.java | 79 | TC_005:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:35,379 | Common.java | 79 | TC_005:  Clicked on WebElement-Register
+ INFO | 2017-11-09 17:30:35,379 | Common.java | 75 | TC_005:  Report step generation success : Clicked on WebElement-Register
+ INFO | 2017-11-09 17:30:35,379 | Common.java | 79 | TC_005:  Clicked on Register Button
+ INFO | 2017-11-09 17:30:35,380 | Common.java | 75 | TC_005:  Report step generation success : Clicked on Register Button
+ INFO | 2017-11-09 17:30:35,990 | Common.java | 79 | TC_005:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:30:37,162 | Common.java | 79 | TC_006:  Getting value of ElementLoadWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:37,163 | Common.java | 79 | TC_006:  Getting value of TextLoadWaitTime from Test Configuration file : 10
+ INFO | 2017-11-09 17:30:37,163 | Common.java | 79 | TC_006:  Getting value of PageLoadWaitTime from Test Configuration file : 120
+ INFO | 2017-11-09 17:30:37,163 | Common.java | 79 | TC_006:  Getting value of ImplicitlyWaitTime from Test Configuration file : 30
+ INFO | 2017-11-09 17:30:37,163 | Common.java | 79 | TC_006:  Getting value of Server_url from Test Configuration file : http://192.168.80.247/testlink/lib/api/xmlrpc/v1/xmlrpc.php
+ INFO | 2017-11-09 17:30:37,163 | Common.java | 79 | TC_006:  Getting value of Dev_key from Test Configuration file : f8f80ad8ea180f0783bc74555cf948f0
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Getting value of Project_Name from Test Configuration file : Sample
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Getting value of Plan_Name from Test Configuration file : Testplan
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Getting value of Build_Name from Test Configuration file : Build
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Getting value of TestSuiteNum from Test Configuration file : 4
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Element time out set
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  ##### Start of Test Case : XML Validation #####
+ INFO | 2017-11-09 17:30:37,164 | Common.java | 79 | TC_006:  Test Case Name: TC_006
+ INFO | 2017-11-09 17:30:37,165 | Common.java | 79 | TC_006:  Getting value of TestDataFile from Test Configuration file : .\src\test\resources\TestData.xls
+ INFO | 2017-11-09 17:30:37,228 | Common.java | 79 | TC_006:  Test Data Set Name: TC_006
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Execution Flag: Execute
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Test Data Set Name: TC_006_01
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Execution Flag: YES
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Test Data Set Name: TC_006_02
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Execution Flag: YES
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Test Data Set Name: 
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Execution Flag: 
+ INFO | 2017-11-09 17:30:37,229 | Common.java | 79 | TC_006:  Getting value of Browser from Test Configuration file : ChromeHeadless
+ INFO | 2017-11-09 17:30:39,124 | Common.java | 79 | TC_006:  Getting value of url from Test Configuration file : http://www.adactin.com/HotelApp/
+ INFO | 2017-11-09 17:30:42,393 | Common.java | 79 | TC_006:  Got the Response with ReturnCodeDetails as Success
+ INFO | 2017-11-09 17:30:42,393 | Common.java | 75 | TC_006:  Report step generation success : Got the Response with ReturnCodeDetails as Success
+ INFO | 2017-11-09 17:30:42,395 | Common.java | 79 | TC_006:  Country Code is matching, Expected->USA, Actual is->USA
+ INFO | 2017-11-09 17:30:42,395 | Common.java | 75 | TC_006:  Report step generation success : Country Code is matching, Expected->USA, Actual is->USA
+ INFO | 2017-11-09 17:30:42,396 | Common.java | 79 | TC_006:  Country Name is matching, Expected->United States, Actual is->United States
+ INFO | 2017-11-09 17:30:42,397 | Common.java | 75 | TC_006:  Report step generation success : Country Name is matching, Expected->United States, Actual is->United States
+ INFO | 2017-11-09 17:30:43,190 | Common.java | 79 | TC_006:  Got the Response with ReturnCodeDetails as Success
+ INFO | 2017-11-09 17:30:43,190 | Common.java | 75 | TC_006:  Report step generation success : Got the Response with ReturnCodeDetails as Success
+ INFO | 2017-11-09 17:30:43,192 | Common.java | 79 | TC_006:  Country Code is matching, Expected->AUT, Actual is->AUT
+ INFO | 2017-11-09 17:30:43,192 | Common.java | 75 | TC_006:  Report step generation success : Country Code is matching, Expected->AUT, Actual is->AUT
+ INFO | 2017-11-09 17:30:43,193 | Common.java | 79 | TC_006:  Country Name is matching, Expected->Austria, Actual is->Austria
+ INFO | 2017-11-09 17:30:43,194 | Common.java | 75 | TC_006:  Report step generation success : Country Name is matching, Expected->Austria, Actual is->Austria
+ INFO | 2017-11-09 17:30:43,765 | Common.java | 79 | TC_006:  Getting value of UpdateTestLinkStatus from Test Configuration file : Yes
+ INFO | 2017-11-09 17:30:45,139 | Common.java | 79 | TC_006:  Getting value of SendMail(Yes/No) from Test Configuration file : No
+ INFO | 2017-11-09 17:30:45,140 | Common.java | 79 | TC_006:  Getting value of SendMsg(Yes/No) from Test Configuration file : No
+ INFO | 2017-11-09 17:30:45,140 | Common.java | 79 | TC_006:  Getting value of VoiceCall(Yes/No) from Test Configuration file : No
+ INFO | 2017-11-09 17:30:45,560 | Common.java | 79 | TC_006:  ###################################
+ INFO | 2017-11-09 17:30:45,560 | Common.java | 79 | TC_006:  Script Execution Complete
+ INFO | 2017-11-09 17:30:45,560 | Common.java | 79 | TC_006:  ####################################

@@ -1,14 +1,10 @@
 package TestCases;
 
 import java.io.File;
-import java.io.IOException;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.xml.sax.SAXException;
 
 import PageMethods.AdactinApplication;
 import PageMethods.AdactinHomePage;
@@ -19,6 +15,7 @@ import PageMethods.SearchHotel;
 import PageMethods.SelectHotel;
 import Utilities.Common;
 import Utilities.GenericKeywords;
+import Utilities.TestLinkConnection;
 import Utilities.XmlValidation;
 
 @Listeners({ Utilities.TestListener.class })
@@ -30,24 +27,25 @@ public class TestCases extends Common {
 	private SearchHotel searchHotel;
 	private SelectHotel selectHotel;
 	private ForgetPassword ForgetPswd;
-	
-    private ConfirmationPage confirmpage;
+	private ConfirmationPage confirmpage;
 	private NewUserRegistration Registrationpage;
-	
-	
+
+
 	@BeforeClass
 	public void start(){	
-		GenericKeywords.extent.loadConfig(new File("D:\\Prakashs_Backup\\DemoWorkspaceFinal\\SWAUTorg\\config\\extent-config.xml"));
-		
+		GenericKeywords.extent.loadConfig(new File("./Config/extent-config.xml"));
+		GenericKeywords.extent.addSystemInfo("Browser", Common.getConfigProperty("Browser"));
+		GenericKeywords.extent.addSystemInfo("URL", Common.getConfigProperty("url"));
 	}
-	
-	
-	public void testStart(String strName,String testCaseDescription) {
+
+
+	public void testStart(String testCaseDescription) {
 		GenericKeywords.testFailure = false;
 		GenericKeywords.currentStep = 0;
-		reportStart(strName,testCaseDescription);
+		reportStart(GenericKeywords.testCaseName,testCaseDescription);
 		adactinApplication=new AdactinApplication();
-		adactinHomePage=adactinApplication.openAdactinApplication();			
+		adactinHomePage=adactinApplication.openAdactinApplication();
+
 	}
 
 	public void testEnd() {
@@ -57,135 +55,140 @@ public class TestCases extends Common {
 			System.out.println("Expception : " + e.getMessage());
 		}finally{
 			GenericKeywords.extent.endTest(GenericKeywords.parent);
-			GenericKeywords.extent.flush();
+			GenericKeywords.extent.flush();	
+			if(getConfigProperty("UpdateTestLinkStatus").toString().trim().toUpperCase().equals("YES")){
+				if(GenericKeywords.testFailure){
+					TestLinkConnection.updateExecutionStatus(GenericKeywords.testCaseName, "", "FAIL");					
+				}else{
+					TestLinkConnection.updateExecutionStatus(GenericKeywords.testCaseName, "passed", "PASS");
+				}
+			}
 		}
 	}
 
 
 	@Test(alwaysRun = true)
 	public void TC_001() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"Login to Adactin Application");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("Login to Adactin Application");
+
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet);
-			
+
 			searchHotel = adactinHomePage.Login();			
 			if(searchHotel.verifyLoginpage())
 				searchHotel.logoutFromApp();
-			
+
 			testStepInfoEnd(testDataSet);
-			}
+		}
 		testEnd();
 
 	}
-	
-	
+
+
 	@Test(alwaysRun = true)
 	public void TC_002() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"Search a hotel");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("Search a hotel");
+
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet);
-			
+
 			searchHotel = adactinHomePage.Login();			
 			selectHotel=searchHotel.BookHotel();
-			
+
 			testStepInfoEnd(testDataSet);
-			}
+		}
 		testEnd();
 
 	}
-	
+
 
 	@Test(alwaysRun = true)
 	public void TC_003() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"Book a hotel");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("Book a hotel");
+
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet );
-			
+
 			searchHotel = adactinHomePage.Login();			
 			selectHotel=searchHotel.BookHotel();
 			selectHotel.Selecthotel();
-			
+
 			testStepInfoEnd(testDataSet);
-			}
+		}
 		testEnd();
 
 	}
-	
-	
+
+
 	@Test(alwaysRun = true)
 	public void TC_004() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"Forget Password functionality");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("Forget Password functionality");
+
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet);
-			
+
 			ForgetPswd=adactinHomePage.forgetpassword();
-			
+
 			testStepInfoEnd(testDataSet );
-			}
+		}
 		testEnd();
 
 	}
-	
-	
+
+
 	@Test(alwaysRun = true)
 	public void TC_005() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"New User Register functionality");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("New User Register functionality");
+
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet);
-			
+
 			Registrationpage=adactinHomePage.UserRegistration();
-			
+
 			testStepInfoEnd(testDataSet );
-			}
+		}
 		testEnd();
 
 	}
-	
-	
+
+
 	@Test(alwaysRun = true)
 	public void TC_006() {
-		String strName = new Exception().getStackTrace()[0].getMethodName();
-		testStart(strName,"XML Validation");
-				
-		
+		GenericKeywords.testCaseName = new Exception().getStackTrace()[0].getMethodName();
+		testStart("XML Validation");
+
 		for (String testDataSet : GenericKeywords.testCaseDataSets) {
 			GenericKeywords.testCaseDataRow = returnRowNumber(testDataSet);
 			testStepInfoStart(testDataSet);
-			
+
 			XmlValidation.SoapCollateralPositionData();	
-			
-			//String text;
+
 			try {
 				XmlValidation.SoapCollateralPositionData();	
 				XmlValidation.validateXml();			
 			} catch (Exception e) {
-				
+
 			} 
-						
+
 			testStepInfoEnd(testDataSet);
-			}
+		}
 		testEnd();
 
 	}
-	
+
 }

@@ -8,12 +8,11 @@ import org.testng.annotations.Test;
 
 import Utilities.Common;
 import Utilities.GenericKeywords;
+import Utilities.TestLinkConnection;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class LaunchScript extends Common {
-
-	
 
 	@Test
 	public void Launch(){
@@ -31,8 +30,8 @@ public class LaunchScript extends Common {
 		} finally {
 			try {								
 				cleanup();
-				createZipFileOfReport(GenericKeywords.outputDirectory);
-				// logout();
+				//createZipFileOfReport(GenericKeywords.outputDirectory);
+				TestLinkConnection.uploadAttachmentToTestSuite(GenericKeywords.outputDirectory+"/Results.html");
 
 			} catch (Exception e) {
 				writeToLogFile("error", e.toString());

@@ -3,6 +3,7 @@ package Utilities;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -28,6 +29,7 @@ public class PropertiesFile
   public PropertiesFile() {}
   
   public static final ArrayList<String> testCases = new ArrayList();
+  public static HashMap<String, String> category = new HashMap<String, String>();
   
   public static void properties() {
     Properties prop = new Properties();
@@ -71,18 +73,20 @@ public class PropertiesFile
       Sheet readsheet1 = w.getSheet(0);
       for (int i = 1; i < readsheet1.getRows(); i++)
       {
-        String value = readsheet1.getCell(4, i).getContents();
+        String value = readsheet1.getCell(5, i).getContents();
         if (value.trim().equalsIgnoreCase("Yes"))
         {
           Element include = doc.createElement("include");
           methods.appendChild(include);
-          Keyword = readsheet1.getCell(2, i).getContents();
+          Keyword = readsheet1.getCell(3, i).getContents();
+          categoryvalue = readsheet1.getCell(2, i).getContents();
           testCases.add(Keyword);
+          category.put(Keyword, categoryvalue);
           include.setAttribute("name", Keyword);
         } else if (value.trim().equalsIgnoreCase("No")) {
           Element exclude = doc.createElement("exclude");
           methods.appendChild(exclude);
-          String Keyword = readsheet1.getCell(0, i).getContents();
+          String Keyword = readsheet1.getCell(3, i).getContents();
           exclude.setAttribute("name", Keyword);
         }
         else if (!value.trim().equalsIgnoreCase(""))
@@ -107,4 +111,5 @@ public class PropertiesFile
   }
   
   public static String Keyword;
+  public static String categoryvalue;
 }

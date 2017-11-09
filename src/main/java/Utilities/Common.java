@@ -12,8 +12,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 import java.util.Properties;
 import java.util.zip.ZipEntry;
@@ -25,10 +23,13 @@ import jxl.Sheet;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 
+import com.assertthat.selenium_shutterbug.core.Shutterbug;
+import com.assertthat.selenium_shutterbug.utils.web.ScrollStrategy;
 import com.relevantcodes.extentreports.LogStatus;
 
 
@@ -62,11 +63,16 @@ public class Common
 	}
 
 	public static void writeToLogFile(String type, String message)
-	{
+	{		
+		message = GenericKeywords.testCaseName + ":  " +message;
 		String t = type.toUpperCase();
 		if (t.equalsIgnoreCase("DEBUG"))
 		{
 			GenericKeywords.logger.debug(message);
+		}
+		if (t.equalsIgnoreCase("PASS"))
+		{
+			GenericKeywords.logger.info(message);
 		}
 		else if (t.equalsIgnoreCase("INFO"))
 		{
@@ -121,42 +127,29 @@ public class Common
 
 	public static void startup()
 	{
-
-
-		try
-		{
+		try{
 			OutputAndLog.createOutputDirectory();
-
 			PropertiesFile.properties();
 			loadTestCaseData();      
-		}
-		catch (Exception e)
-		{
+		}catch (Exception e){
 			writeToLogFile("INFO", "Startup activities - Done...");
 		}
 	}
 
 
-	public static void cleanup()
-	{
-		try
-		{    	
-			if (GenericKeywords.getConfigProperty("SendMail(Yes/No)").trim().equalsIgnoreCase("yes"))
-			{          
+	public static void cleanup(){
+		try{    	
+			if (GenericKeywords.getConfigProperty("SendMail(Yes/No)").trim().equalsIgnoreCase("yes")){          
 				writeToLogFile("INFO", "<<<<<<<<<<<<<Sending mail...>>>>>>>>>>>>>>>>>");
 				Mailing.sendMail();
 			}
-			if (GenericKeywords.getConfigProperty("SendMsg(Yes/No)").trim().equalsIgnoreCase("yes"))
-			{
+			if (GenericKeywords.getConfigProperty("SendMsg(Yes/No)").trim().equalsIgnoreCase("yes")){
 				Texting.sendMsg();
 			}
-			if (GenericKeywords.getConfigProperty("VoiceCall(Yes/No)").trim().equalsIgnoreCase("yes"))
-			{
+			if (GenericKeywords.getConfigProperty("VoiceCall(Yes/No)").trim().equalsIgnoreCase("yes")){
 				VoiceCall.voiceCall();
 			}
-		}
-		catch (Exception e)
-		{
+		}catch (Exception e){
 			System.out.println(e.toString());
 		}
 	}
@@ -164,6 +157,7 @@ public class Common
 	public void createZipFileOfReport(String reportPath){
 		System.out.println(reportPath);
 		File dir = new File(reportPath);
+
 		try {
 			System.out.println("Getting all files in "
 					+ dir.getCanonicalPath()
@@ -193,21 +187,25 @@ public class Common
 				fin.close();				
 			}
 			zout.close();
-			File srcDir = new File(GenericKeywords.outputDirectory);
-			File destDir = new File(strPath);
-			FileUtils.copyDirectory(srcDir, destDir);
+			GenericKeywords.PathOfZipFile = strPath+"\\TestExecutionReport.zip";
 		} catch (Exception e) {
 			System.out.println("Exception caught");
 		}
 	}
 
 
-	public static void testReporter(String color, String report){
+
+
+	public static void testReporter(String color, String report)
+	{
 		colorTypes ct = colorTypes.valueOf(color.toLowerCase());
-		if (!color.contains("white")){
+		if (!color.contains("white"))
+		{
 			GenericKeywords.currentStep += 1;
 		}
-		switch (ct){
+
+		switch (ct)
+		{
 		case green: 
 			GenericKeywords.child.log(LogStatus.PASS,"<font color=green>" + GenericKeywords.currentStep + ". " + report + "</font><br/>");writeToLogFile("PASS", "Report step generation success : " + report);System.out.println("green" + GenericKeywords.currentStep); break;
 		case blue:  GenericKeywords.child.log(LogStatus.INFO,"<font color=blue>" + GenericKeywords.currentStep + ". " + report + "</font><br/>");writeToLogFile("INFO", "Report step generation success : " + report);System.out.println("blue" + GenericKeywords.currentStep); break;
@@ -295,6 +293,30 @@ public class Common
 		}
 	}
 
+	public static void captureFullScreenShot(String filename)
+	{
+		File scrFile = null;
+		String scrPath = GenericKeywords.outputDirectory + "\\Screenshots";
+		File file = new File(scrPath);
+		file.mkdir();
+		try {
+
+			/*Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+					.takeScreenshot(GenericKeywords.driver);
+			ImageIO.write(screenshot.getImage(), "PNG", new File(scrPath + "\\" + filename + ".png"));*/
+
+			Shutterbug.shootPage(GenericKeywords.driver,ScrollStrategy.BOTH_DIRECTIONS)	                       
+			.withName(filename)
+			.save(scrPath);
+
+		} catch (Exception e) {
+			testReporter("Red", e.toString());
+			return;
+		} finally {
+			((JavascriptExecutor) GenericKeywords.driver).executeScript("scroll(0,0)");
+		}
+	}
+
 
 
 	public static void testStepFailed(String errMessage){
@@ -307,7 +329,12 @@ public class Common
 			screenShot("TestFailure" + GenericKeywords.failureNo);
 			GenericKeywords.windowreadyStateStatus = true;
 		}else{
-			captureScreenShot("TestFailure" + GenericKeywords.failureNo);
+			String strBrowser = Common.getConfigProperty("Browser").toLowerCase();
+			if(strBrowser.contains("internetexplorer") || strBrowser.contains("ie")){
+				captureScreenShot("TestFailure" + GenericKeywords.failureNo);
+			}else{
+				captureFullScreenShot("TestFailure" + GenericKeywords.failureNo);
+			}				
 		}	  
 		String pathAndFile = GenericKeywords.outputDirectory + "\\Screenshots\\TestFailure" + GenericKeywords.failureNo+ ".png";
 		GenericKeywords.child.log(LogStatus.FAIL, "Check ScreenShot Below: " + GenericKeywords.child.addScreenCapture(pathAndFile));	  
@@ -326,6 +353,45 @@ public class Common
 		}	   
 	}
 
+
+
+	public static void testAssertFail(String errMessage){
+		try{
+			GenericKeywords.testFailure = true;
+			GenericKeywords.failureNo += 1;
+			writeToLogFile("Error", errMessage);
+			testReporter("Red", errMessage);
+			if (!GenericKeywords.windowreadyStateStatus){
+				screenShot("TestFailure" + GenericKeywords.failureNo);
+				GenericKeywords.windowreadyStateStatus = true;
+			}else{
+				String strBrowser = Common.getConfigProperty("Browser").toLowerCase();
+				if(strBrowser.contains("internetexplorer") || strBrowser.contains("ie")){
+					captureScreenShot("TestFailure" + GenericKeywords.failureNo);
+				}else{
+					captureFullScreenShot("TestFailure" + GenericKeywords.failureNo);
+				}				
+			}	  
+			String pathAndFile = GenericKeywords.outputDirectory + "\\Screenshots\\TestFailure" + GenericKeywords.failureNo+ ".png";
+			GenericKeywords.child.log(LogStatus.INFO, "Check ScreenShot Below: " + GenericKeywords.child.addScreenCapture(pathAndFile));
+			GenericKeywords.child.log(LogStatus.ERROR, "Test Case Failed and Not Continuing the Execution");
+			GenericKeywords.parent.appendChild(GenericKeywords.child);
+			try{
+				GenericKeywords.driver.quit();			
+			}catch(Exception ex){
+				writeToLogFile("Error", "Unable to Close the browser after failure->"+ex.getMessage());
+			}finally{
+				GenericKeywords.extent.endTest(GenericKeywords.parent);
+				GenericKeywords.extent.flush();
+				Assert.fail();
+			}						
+		}catch(Exception ex){
+			writeToLogFile("Error", "Unable to report Failures to Extent Html Report->"+ex.getMessage());
+			Assert.fail();
+		}
+
+	}
+
 	public static void testStepPassed(String errMessage)
 	{
 		writeToLogFile("Info", errMessage);
@@ -339,7 +405,18 @@ public class Common
 	}
 
 	public static void testStepInfoStart(String testDataSet) {
+		String strCategory = "";
+		try{			
+			if(PropertiesFile.category.get(GenericKeywords.testCaseName).trim().equals("")){
+				strCategory = "Regression";
+			}else{
+				strCategory = PropertiesFile.category.get(GenericKeywords.testCaseName).trim();
+			}
+		}catch(Exception ex){
+			strCategory = "Regression";
+		}
 		GenericKeywords.child = GenericKeywords.extent.startTest(testDataSet);
+		GenericKeywords.child.assignCategory(strCategory);
 		GenericKeywords.child.log(LogStatus.INFO, "########### Start of Test Case Data Set: "+testDataSet + " ###########");	    
 	}
 
@@ -356,6 +433,12 @@ public class Common
 		GenericKeywords.textLoadWaitTime = Integer.parseInt(getConfigProperty("TextLoadWaitTime").toString().trim());
 		GenericKeywords.pageLoadWaitTime = Integer.parseInt(getConfigProperty("PageLoadWaitTime").toString().trim());
 		GenericKeywords.implicitlyWaitTime = Integer.parseInt(getConfigProperty("ImplicitlyWaitTime").toString().trim());
+		TestLinkConnection.SERVER_URL = getConfigProperty("Server_url").toString().trim();
+		TestLinkConnection.DEV_KEY = getConfigProperty("Dev_key").toString().trim();
+		TestLinkConnection.PROJECT_NAME = getConfigProperty("Project_Name").toString().trim();
+		TestLinkConnection.PLAN_NAME = getConfigProperty("Plan_Name").toString().trim();
+		TestLinkConnection.BUILD_NAME = getConfigProperty("Build_Name").toString().trim();
+		TestLinkConnection.TESTSUITENUM = Integer.parseInt(getConfigProperty("TestSuiteNum").toString().trim());
 		writeToLogFile("INFO", "Element time out set");
 		GenericKeywords.writeToLogFile("INFO", "##### Start of Test Case : " + testCaseDescription + " #####");        
 		for (String testCaseName : GenericKeywords.testCaseNames)
@@ -382,22 +465,16 @@ public class Common
 		Boolean flag = Boolean.valueOf(false);
 		for (int caseRow = 0; caseRow < readsheet.getRows(); caseRow++) {
 			GenericKeywords.testCaseDataSets.clear();
-			if (testCaseName.equals(readsheet.getCell(1, caseRow).getContents()))
-			{
-
-
-				for (int DataRow = caseRow; DataRow < readsheet.getRows(); DataRow++)
-				{
+			if (testCaseName.equals(readsheet.getCell(1, caseRow).getContents())){
+				for (int DataRow = caseRow; DataRow < readsheet.getRows(); DataRow++){
 					GenericKeywords.testCaseRow = caseRow + 1;
 					testCaseDataSet = readsheet.getCell(1, DataRow).getContents();
 					writeToLogFile("INFO", "Test Data Set Name: " + testCaseDataSet);
 					executionFlag = readsheet.getCell(2, DataRow).getContents();
 					writeToLogFile("INFO", "Execution Flag: " + executionFlag);
-					if ((testCaseDataSet.startsWith(testCaseName)) && (executionFlag.toUpperCase().equals("YES")))
-					{
+					if ((testCaseDataSet.startsWith(testCaseName)) && (executionFlag.toUpperCase().equals("YES"))){
 						GenericKeywords.testCaseDataSets.add(testCaseDataSet);
-					} else if (testCaseDataSet.isEmpty())
-					{
+					} else if (testCaseDataSet.isEmpty()){
 						flag = Boolean.valueOf(true);
 						break;
 					}
@@ -412,16 +489,29 @@ public class Common
 
 
 
-	public static void embedScreenshot(String colour, String pathAndFile){   
+	public static void embedScreenshot(String colour, String pathAndFile)
+	{   
 		GenericKeywords.child.log(LogStatus.INFO, "Manual Verification Point: " + GenericKeywords.child.addScreenCapture(pathAndFile+ ".png"));    
 	}
 
 
-	public static void takeScreenshot(String comment){
-		GenericKeywords.screenshotNo += 1;        
-		captureScreenShot("Screenshot" + GenericKeywords.screenshotNo);
-		embedScreenshot("orange", "./Screenshots" + "/Screenshot" + GenericKeywords.screenshotNo);
+	public static void takeScreenshot()
+	{
+		String strBrowser = Common.getConfigProperty("Browser").toLowerCase();
+		if(strBrowser.equalsIgnoreCase("htmlunitdriver")){		
+			//Do Nothing ChromeHeadless
+		}else{
+			GenericKeywords.screenshotNo += 1;     
+
+			if(strBrowser.contains("internetexplorer") || strBrowser.contains("ie")){
+				captureScreenShot("Screenshot" + GenericKeywords.screenshotNo);
+			}else{
+				captureFullScreenShot("Screenshot" + GenericKeywords.screenshotNo);
+			}			
+			embedScreenshot("orange", GenericKeywords.outputDirectory + "\\Screenshots" + "\\Screenshot" + GenericKeywords.screenshotNo);
+		}
 	}
+
 
 
 	public static void useExcelSheet(String pathOfExcel, int sheetNumber)
@@ -439,7 +529,8 @@ public class Common
 
 
 
-	public static String retrieve(String Label){
+	public static String retrieve(String Label)
+	{
 		return DataDriver.retrieve(GenericKeywords.testCaseRow, GenericKeywords.testCaseDataRow, Label);
 	}
 
@@ -459,7 +550,8 @@ public class Common
 	}
 
 
-	public static String retrieveExceptionMessage(Integer exceptionNumber){
+	public static String retrieveExceptionMessage(Integer exceptionNumber)
+	{
 		String exceptionMessage = null;
 		String exceptionNo = exceptionNumber.toString();
 		Sheet readsheet = DataDriver.w.getSheet(1);

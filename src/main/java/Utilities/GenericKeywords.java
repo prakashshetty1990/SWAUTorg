@@ -33,17 +33,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 
-
-
-
-
-
-
-
-
-
-
-
 public class GenericKeywords
   extends Common
 {
@@ -81,7 +70,8 @@ public class GenericKeywords
   public static String timeStamp = "";
   public static boolean testCaseExecutionStatus = false;
   public static boolean webElementIsPresent = false;
-  
+  public static String PathOfZipFile;
+  public static String testCaseName;
 
 
   public GenericKeywords() {}
@@ -114,18 +104,13 @@ public class GenericKeywords
       switch (b)
       {
       case IOS: 
-        break;
-      
+        break;      
       case ANDROID: 
         capabilities.setCapability("platformName", platForm);
         capabilities.setCapability("platformVersion", platFormVersion);
         capabilities.setCapability("deviceName", deviceName);
         driver = new AppiumDriver(new URL("http://" + ip + ":" + portNumber + "/wd/hub"), capabilities);
       }
-      
-      
-
-
       elementLoadWaitTime = Integer.parseInt(getConfigProperty("ElementLoadWaitTime").toString().trim());
       textLoadWaitTime = Integer.parseInt(getConfigProperty("TextLoadWaitTime").toString().trim());
       pageLoadWaitTime = Integer.parseInt(getConfigProperty("PageLoadWaitTime").toString().trim());
@@ -150,73 +135,6 @@ public class GenericKeywords
     }
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   public static void navigateTo(String url)
   {

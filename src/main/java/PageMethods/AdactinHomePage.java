@@ -89,7 +89,7 @@ public class AdactinHomePage extends Page {
 		Common.testStepPassed("Entered Username ->"+ Common.retrieve("UserName"));
 		enterText(wePassword,Common.retrieve("Password"));
 		Common.testStepPassed("Entered Password ->"+ Common.retrieve("UserName"));
-		Common.takeScreenshot("EnteredUsernamePassword");
+		Common.takeScreenshot();
 		weUsername.click();
 		clickOn(btnLogin,"Login");
 		return new SearchHotel(browser);
@@ -119,7 +119,7 @@ public class AdactinHomePage extends Page {
 		Common.testStepPassed("Entered Email Address->"+Common.retrieve("EmailAddress"));
 		clickOn(chkAgree,"Agree");
 		Common.testStepPassed("Clicked on Agree checkbox");
-		Common.takeScreenshot("EnteredAllMandatoryFields");
+		Common.takeScreenshot();
 		clickOn(btnRegister,"Register");
 		Common.testStepPassed("Clicked on Register Button");		
 		return new NewUserRegistration(browser);

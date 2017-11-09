@@ -87,14 +87,14 @@ public class SearchHotel extends Page {
 		selectByVisisbleText(weChildren,"Children",Common.retrieve("Children"));
 		clickOn(btnSearch,"Search");
 		Common.testStepPassed("Clicked on Seach button");
-		Common.takeScreenshot("SearchResults");
+		Common.takeScreenshot();
 	return new SelectHotel(browser);
 	}
 
 	public boolean verifyLoginpage() {
 		if (isElementPresent(By.xpath("//input[@name='Reset']"))) {
 			Common.testStepPassed("Successfully logged in to the application" );
-			Common.takeScreenshot("LoggedIn");
+			Common.takeScreenshot();
 			return true;
 		}else{
 			
